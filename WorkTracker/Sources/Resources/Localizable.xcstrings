@@ -1,0 +1,4626 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "%@ %@, %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ %@, %@"
+          }
+        }
+      }
+    },
+    "%@ (half day)": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ (halber Tag)"
+          }
+        }
+      }
+    },
+    "%@ / %@ days": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ / %@ Tage"
+          }
+        }
+      }
+    },
+    "%@ days": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ Tage"
+          }
+        }
+      }
+    },
+    "%@ items differ from the last sync because this Mac’s database file was switched or restored. Sync waits until you choose which data to keep.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ Elemente weichen von der letzten Synchronisierung ab, weil die Datenbankdatei dieses Macs gewechselt oder wiederhergestellt wurde. Die Synchronisierung wartet, bis Sie wählen, welche Daten gelten."
+          }
+        }
+      }
+    },
+    "%@ items that were there at the last sync are missing on this Mac. Sync waits, so they aren’t deleted on your other Macs too. Restore them from sync, or delete them everywhere if you removed them on purpose.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ Elemente, die bei der letzten Synchronisierung vorhanden waren, fehlen auf diesem Mac. Die Synchronisierung wartet, damit sie nicht auch auf Ihren anderen Macs gelöscht werden. Stellen Sie sie wieder her, oder löschen Sie sie überall, wenn Sie sie absichtlich entfernt haben."
+          }
+        }
+      }
+    },
+    "%@ over budget — those days count as working days": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ über dem Budget – diese Tage zählen als Arbeitstage"
+          }
+        }
+      }
+    },
+    "%@ per week (%@%%)": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ pro Woche (%@ %%)"
+          }
+        }
+      }
+    },
+    "%@ remaining": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ verbleibend"
+          }
+        }
+      }
+    },
+    "%@ vs %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ vs. %@"
+          }
+        }
+      }
+    },
+    "%@ · since %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · seit %@"
+          }
+        }
+      }
+    },
+    "%@ — open Work Tracker to decide.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ – öffnen Sie Work Tracker, um zu entscheiden."
+          }
+        }
+      }
+    },
+    "%@, archived": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@, archiviert"
+          }
+        }
+      }
+    },
+    "%@/%@ vacation days": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@/%@ Ferientage"
+          }
+        }
+      }
+    },
+    "%@: %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@: %@"
+          }
+        }
+      }
+    },
+    "%@: %@ this year": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@: %@ dieses Jahr"
+          }
+        }
+      }
+    },
+    "%lld days without entries": {
+      "localizations": {
+        "de": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld Tag ohne Einträge"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld Tage ohne Einträge"
+                }
+              }
+            }
+          }
+        },
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld day without entries"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld days without entries"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%lld entries": {
+      "localizations": {
+        "de": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld Eintrag"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld Einträge"
+                }
+              }
+            }
+          }
+        },
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld entry"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld entries"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%lld half-day holidays": {
+      "localizations": {
+        "de": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld halber Feiertag"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld halbe Feiertage"
+                }
+              }
+            }
+          }
+        },
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld half-day holiday"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld half-day holidays"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%lld more": {
+      "localizations": {
+        "de": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld weiterer"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld weitere"
+                }
+              }
+            }
+          }
+        },
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld more"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld more"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%lld projects": {
+      "localizations": {
+        "de": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld Projekt"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld Projekte"
+                }
+              }
+            }
+          }
+        },
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld project"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld projects"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%lld public holidays": {
+      "localizations": {
+        "de": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld Feiertag"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld Feiertage"
+                }
+              }
+            }
+          }
+        },
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld public holiday"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld public holidays"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%lld working days": {
+      "localizations": {
+        "de": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld Arbeitstag"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld Arbeitstage"
+                }
+              }
+            }
+          }
+        },
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld working day"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld working days"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "'%@' has %lld time entries. Delete or reassign them first, or archive the project.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "«%1$@» hat %#@entries@. Löschen oder verschieben Sie diese zuerst oder archivieren Sie das Projekt."
+          },
+          "substitutions": {
+            "entries": {
+              "argNum": 2,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg Zeiteintrag"
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg Zeiteinträge"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "'%1$@' has %#@entries@. Delete or reassign them first, or archive the project."
+          },
+          "substitutions": {
+            "entries": {
+              "argNum": 2,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg time entry"
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg time entries"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "'%@' will be removed. You can undo this with ⌘Z.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "«%@» wird entfernt. Mit ⌘Z können Sie das rückgängig machen."
+          }
+        }
+      }
+    },
+    "(over allowance)": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "(über dem Guthaben)"
+          }
+        }
+      }
+    },
+    "1 day": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 Tag"
+          }
+        }
+      }
+    },
+    "A category with this name already exists.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eine Kategorie mit diesem Namen existiert bereits."
+          }
+        }
+      }
+    },
+    "A live database in a synced folder can be corrupted. Recommended: keep it on this Mac and copy backups to that folder.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eine aktive Datenbank in einem synchronisierten Ordner kann beschädigt werden. Empfohlen: Behalten Sie sie auf diesem Mac und kopieren Sie Backups in diesen Ordner."
+          }
+        }
+      }
+    },
+    "A project with this name already exists.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ein Projekt mit diesem Namen existiert bereits."
+          }
+        }
+      }
+    },
+    "A timer is running for '%@'. Stop it first.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Für «%@» läuft ein Timer. Stoppen Sie ihn zuerst."
+          }
+        }
+      }
+    },
+    "A verified backup is saved daily while the app is running (skipped when nothing changed). The latest 30 are kept on this Mac.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solange die App läuft, wird täglich ein geprüftes Backup gespeichert (ausser wenn sich nichts geändert hat). Die letzten 30 bleiben auf diesem Mac."
+          }
+        }
+      }
+    },
+    "AI Assistants": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KI-Assistenten"
+          }
+        }
+      }
+    },
+    "Absence": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abwesenheit"
+          }
+        }
+      }
+    },
+    "Absences": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abwesenheiten"
+          }
+        }
+      }
+    },
+    "Absences appear as all-day events in a “Work Tracker” calendar in iCloud and follow every change. Work Tracker manages that calendar, so edits made to it in Calendar are replaced. Turning this off keeps the calendar; delete it in Calendar if you no longer want it.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abwesenheiten erscheinen als ganztägige Ereignisse im Kalender «Work Tracker» in iCloud und folgen jeder Änderung. Work Tracker verwaltet diesen Kalender, darum werden Änderungen daran in der App Kalender überschrieben. Beim Ausschalten bleibt der Kalender bestehen – löschen Sie ihn in Kalender, wenn Sie ihn nicht mehr brauchen."
+          }
+        }
+      }
+    },
+    "Add": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hinzufügen"
+          }
+        }
+      }
+    },
+    "Add Category": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kategorie hinzufügen"
+          }
+        }
+      }
+    },
+    "Add Entry": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eintrag hinzufügen"
+          }
+        }
+      }
+    },
+    "Add Schedule Change…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Änderung des Arbeitspensums hinzufügen …"
+          }
+        }
+      }
+    },
+    "Add a project first.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Legen Sie zuerst ein Projekt an."
+          }
+        }
+      }
+    },
+    "Add a time entry (⌘N)": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeiteintrag hinzufügen (⌘N)"
+          }
+        }
+      }
+    },
+    "Add new project...": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neues Projekt hinzufügen …"
+          }
+        }
+      }
+    },
+    "Address": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adresse"
+          }
+        }
+      }
+    },
+    "Adds a time entry for a project.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fügt einen Zeiteintrag für ein Projekt hinzu."
+          }
+        }
+      }
+    },
+    "All-time Balance": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gesamtsaldo"
+          }
+        }
+      }
+    },
+    "Also copy each backup to another folder — for example a cloud drive — so your data survives losing this Mac.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jedes Backup zusätzlich in einen anderen Ordner kopieren – etwa in einen Cloud-Speicher –, damit Ihre Daten auch einen Verlust dieses Macs überstehen."
+          }
+        }
+      }
+    },
+    "An entry can’t cross midnight — split it into two entries.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ein Eintrag darf nicht über Mitternacht gehen — teilen Sie ihn in zwei Einträge auf."
+          }
+        }
+      }
+    },
+    "Annual vacation entitlement": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jährlicher Ferienanspruch"
+          }
+        }
+      }
+    },
+    "Another Mac": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ein anderer Mac"
+          }
+        }
+      }
+    },
+    "Another Mac syncs with a newer version of Work Tracker. Update this Mac first.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ein anderer Mac synchronisiert mit einer neueren Version von Work Tracker. Aktualisieren Sie zuerst diesen Mac."
+          }
+        }
+      }
+    },
+    "Another Mac’s sync file can’t be read yet (%@). Try again in a moment; if it keeps failing, remove that file from the sync folder.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Sync-Datei eines anderen Macs kann noch nicht gelesen werden (%@). Versuchen Sie es gleich nochmals; wenn es weiterhin nicht geht, entfernen Sie diese Datei aus dem Sync-Ordner."
+          }
+        }
+      }
+    },
+    "Apple Intelligence couldn’t process that. Try again.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Intelligence konnte das nicht verarbeiten. Versuchen Sie es erneut."
+          }
+        }
+      }
+    },
+    "Apple Intelligence doesn’t support this language yet.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Intelligence unterstützt diese Sprache noch nicht."
+          }
+        }
+      }
+    },
+    "Apple Intelligence is still getting ready. Try again in a few minutes.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Intelligence wird noch vorbereitet. Versuchen Sie es in ein paar Minuten erneut."
+          }
+        }
+      }
+    },
+    "Apple Intelligence isn’t available right now.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Intelligence ist gerade nicht verfügbar."
+          }
+        }
+      }
+    },
+    "Applies": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gilt"
+          }
+        }
+      }
+    },
+    "Applies from": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gilt ab"
+          }
+        }
+      }
+    },
+    "Archive": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Archivieren"
+          }
+        }
+      }
+    },
+    "Archive categories to hide them from the picker. Existing entries and reports are preserved.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Archivierte Kategorien werden in der Auswahl ausgeblendet. Bestehende Einträge und Berichte bleiben erhalten."
+          }
+        }
+      }
+    },
+    "Archive project": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Projekt archivieren"
+          }
+        }
+      }
+    },
+    "Archived": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Archiviert"
+          }
+        }
+      }
+    },
+    "Archived (%lld)": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Archiviert (%lld)"
+          }
+        }
+      }
+    },
+    "Assistants": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Assistenten"
+          }
+        }
+      }
+    },
+    "Back Up Now": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jetzt sichern"
+          }
+        }
+      }
+    },
+    "Backup integrity check failed.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Integritätsprüfung des Backups ist fehlgeschlagen."
+          }
+        }
+      }
+    },
+    "Backups": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Backups"
+          }
+        }
+      }
+    },
+    "Balance": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saldo"
+          }
+        }
+      }
+    },
+    "Balance hours": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saldo-Stunden"
+          }
+        }
+      }
+    },
+    "Blue": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blau"
+          }
+        }
+      }
+    },
+    "Built-in categories": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standardkategorien"
+          }
+        }
+      }
+    },
+    "CSV format": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CSV-Format"
+          }
+        }
+      }
+    },
+    "Calendar": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kalender"
+          }
+        }
+      }
+    },
+    "Cancel": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abbrechen"
+          }
+        }
+      }
+    },
+    "Cannot Delete": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Löschen nicht möglich"
+          }
+        }
+      }
+    },
+    "Can’t read its data: %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seine Daten können nicht gelesen werden: %@"
+          }
+        }
+      }
+    },
+    "Care": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Betreuung"
+          }
+        }
+      }
+    },
+    "Carried into %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Übertrag nach %@"
+          }
+        }
+      }
+    },
+    "Carry unused days into the next year": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nicht bezogene Tage ins nächste Jahr übertragen"
+          }
+        }
+      }
+    },
+    "Category": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kategorie"
+          }
+        }
+      }
+    },
+    "Change Colour…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Farbe ändern …"
+          }
+        }
+      }
+    },
+    "Change colour": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Farbe ändern"
+          }
+        }
+      }
+    },
+    "Change colour of %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Farbe von %@ ändern"
+          }
+        }
+      }
+    },
+    "Choose Folder…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ordner wählen …"
+          }
+        }
+      }
+    },
+    "Choose a folder for backup copies": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ordner für Backup-Kopien wählen"
+          }
+        }
+      }
+    },
+    "Choose data storage folder": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ordner für die Datenspeicherung wählen"
+          }
+        }
+      }
+    },
+    "Claude Code": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Claude Code"
+          }
+        }
+      }
+    },
+    "Claude Code, Codex and other assistants that support MCP can then read your entries, balances, absences and projects and change them. Only apps on this Mac can connect, and only with the key in their setup. Their changes sync to your other Macs and can’t be undone with ⌘Z. Turn this on only on the Mac where your assistants run.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Claude Code, Codex und andere Assistenten, die MCP unterstützen, können dann Ihre Einträge, Salden, Abwesenheiten und Projekte lesen und ändern. Verbinden können sich nur Apps auf diesem Mac, und nur mit dem Schlüssel aus ihrer Einrichtung. Ihre Änderungen werden mit Ihren anderen Macs synchronisiert und lassen sich nicht mit ⌘Z widerrufen. Schalten Sie dies nur auf dem Mac ein, auf dem Ihre Assistenten laufen."
+          }
+        }
+      }
+    },
+    "Click \"Add Entry\" or press ⌘N to log your work": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klicken Sie auf «Eintrag hinzufügen» oder drücken Sie ⌘N, um Ihre Arbeit zu erfassen"
+          }
+        }
+      }
+    },
+    "Click: full day → half day → remove. **Shift+click** to select a range. Click another absence to convert it to the selected type.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klick: ganzer Tag → halber Tag → entfernen. **Umschalt+Klick** für einen Bereich. Andere Abwesenheit anklicken, um sie in den ausgewählten Typ umzuwandeln."
+          }
+        }
+      }
+    },
+    "Codex": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Codex"
+          }
+        }
+      }
+    },
+    "Colour": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Farbe"
+          }
+        }
+      }
+    },
+    "Combine Both": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beide zusammenführen"
+          }
+        }
+      }
+    },
+    "Comma-separated (standard)": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Komma-getrennt (Standard)"
+          }
+        }
+      }
+    },
+    "Connecting to iCloud Drive… If macOS asks, allow Work Tracker to access files in iCloud Drive.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbindung mit iCloud Drive… Wenn macOS fragt, erlauben Sie Work Tracker den Zugriff auf Dateien in iCloud Drive."
+          }
+        }
+      }
+    },
+    "Copied": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kopiert"
+          }
+        }
+      }
+    },
+    "Copied %lld entries from %@.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%#@entries@ von %2$@ kopiert."
+          },
+          "substitutions": {
+            "entries": {
+              "argNum": 1,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg Eintrag"
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg Einträge"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copied %#@entries@ from %2$@."
+          },
+          "substitutions": {
+            "entries": {
+              "argNum": 1,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg entry"
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg entries"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Copied %lld entries from %@; %lld skipped because they overlap.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%#@entries@ von %2$@ kopiert; %#@skipped@ wegen Überschneidung übersprungen."
+          },
+          "substitutions": {
+            "entries": {
+              "argNum": 1,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg Eintrag"
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg Einträge"
+                    }
+                  }
+                }
+              }
+            },
+            "skipped": {
+              "argNum": 3,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg Eintrag"
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg Einträge"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copied %#@entries@ from %2$@; %#@skipped@ because of overlaps."
+          },
+          "substitutions": {
+            "entries": {
+              "argNum": 1,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg entry"
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg entries"
+                    }
+                  }
+                }
+              }
+            },
+            "skipped": {
+              "argNum": 3,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg skipped"
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg skipped"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Copy Backups To": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Backups kopieren nach"
+          }
+        }
+      }
+    },
+    "Copy Command": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Befehl kopieren"
+          }
+        }
+      }
+    },
+    "Copy Entries from %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einträge von %@ kopieren"
+          }
+        }
+      }
+    },
+    "Copy Settings": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einstellungen kopieren"
+          }
+        }
+      }
+    },
+    "Could not copy the backup to %@: %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das Backup konnte nicht nach %@ kopiert werden: %@"
+          }
+        }
+      }
+    },
+    "Could not create the backup file.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Backup-Datei konnte nicht erstellt werden."
+          }
+        }
+      }
+    },
+    "Could not move the database": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Datenbank konnte nicht verschoben werden"
+          }
+        }
+      }
+    },
+    "Could not open the database for backup.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Datenbank konnte für das Backup nicht geöffnet werden."
+          }
+        }
+      }
+    },
+    "Could not save changes": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Änderungen konnten nicht gespeichert werden"
+          }
+        }
+      }
+    },
+    "Could not start the database backup.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das Datenbank-Backup konnte nicht gestartet werden."
+          }
+        }
+      }
+    },
+    "Could not sync: %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Synchronisierung fehlgeschlagen: %@"
+          }
+        }
+      }
+    },
+    "Could not update the calendar: %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Der Kalender konnte nicht aktualisiert werden: %@"
+          }
+        }
+      }
+    },
+    "Couldn’t tell what to do. Mention a project and times, or say start or stop.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unklar, was zu tun ist. Nennen Sie ein Projekt und Zeiten, oder sagen Sie «beginnen» oder «Feierabend»."
+          }
+        }
+      }
+    },
+    "Counting rule": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Berechnungsregel"
+          }
+        }
+      }
+    },
+    "Counting rule changes apply to new entries. Existing entries keep their original rule.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Änderungen der Berechnungsregel gelten für neue Einträge. Bestehende Einträge behalten ihre ursprüngliche Regel."
+          }
+        }
+      }
+    },
+    "Current Balance": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktueller Saldo"
+          }
+        }
+      }
+    },
+    "Custom categories": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eigene Kategorien"
+          }
+        }
+      }
+    },
+    "Custom location": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eigener Ort"
+          }
+        }
+      }
+    },
+    "Cyan": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cyan"
+          }
+        }
+      }
+    },
+    "Daily Entry": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tageserfassung"
+          }
+        }
+      }
+    },
+    "Daily Quote": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tägliches Zitat"
+          }
+        }
+      }
+    },
+    "Daily Summary…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tagesübersicht …"
+          }
+        }
+      }
+    },
+    "Database Backups": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Datenbanksicherungen"
+          }
+        }
+      }
+    },
+    "Database Location": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speicherort der Datenbank"
+          }
+        }
+      }
+    },
+    "Database backup could not finish. It will be retried automatically.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das Datenbank-Backup konnte nicht abgeschlossen werden. Es wird automatisch erneut versucht."
+          }
+        }
+      }
+    },
+    "Date": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Datum"
+          }
+        }
+      }
+    },
+    "Days Without Entries": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tage ohne Einträge"
+          }
+        }
+      }
+    },
+    "Default (Application Support)": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard (Application Support)"
+          }
+        }
+      }
+    },
+    "Delete": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Löschen"
+          }
+        }
+      }
+    },
+    "Delete Entry": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eintrag löschen"
+          }
+        }
+      }
+    },
+    "Delete Them Here Too": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auch hier löschen"
+          }
+        }
+      }
+    },
+    "Delete Them on All Macs": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auf allen Macs löschen"
+          }
+        }
+      }
+    },
+    "Delete entry": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eintrag löschen"
+          }
+        }
+      }
+    },
+    "Delete entry (⌘Z to undo)": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eintrag löschen (⌘Z zum Widerrufen)"
+          }
+        }
+      }
+    },
+    "Delete project": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Projekt löschen"
+          }
+        }
+      }
+    },
+    "Delete this project?": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieses Projekt löschen?"
+          }
+        }
+      }
+    },
+    "Didn’t hear anything.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Es wurde nichts gehört."
+          }
+        }
+      }
+    },
+    "Discard Timer": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Timer verwerfen"
+          }
+        }
+      }
+    },
+    "Dismiss (Esc)": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schliessen (Esc)"
+          }
+        }
+      }
+    },
+    "Dismiss quote": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zitat schliessen"
+          }
+        }
+      }
+    },
+    "Done": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fertig"
+          }
+        }
+      }
+    },
+    "Downloading speech recognition…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spracherkennung wird geladen …"
+          }
+        }
+      }
+    },
+    "Duplicate Entry": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eintrag duplizieren"
+          }
+        }
+      }
+    },
+    "Duration": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dauer"
+          }
+        }
+      }
+    },
+    "Each Mac keeps its own database. Work Tracker exchanges the changes through the “Work Tracker Sync” folder in iCloud Drive and merges them; when the same item was changed on two Macs, the later change wins. The work schedule, vacation and balance settings sync too. Language, export format, backups and the calendar are set per Mac.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jeder Mac behält seine eigene Datenbank. Work Tracker tauscht die Änderungen über den Ordner «Work Tracker Sync» in iCloud Drive aus und führt sie zusammen; wurde dasselbe auf zwei Macs geändert, gilt die spätere Änderung. Arbeitspensum, Ferien und Saldo werden ebenfalls synchronisiert. Sprache, Exportformat, Backups und Kalender stellen Sie pro Mac ein."
+          }
+        }
+      }
+    },
+    "Edit": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bearbeiten"
+          }
+        }
+      }
+    },
+    "Edit Category": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kategorie bearbeiten"
+          }
+        }
+      }
+    },
+    "Edit Entry": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eintrag bearbeiten"
+          }
+        }
+      }
+    },
+    "Edit Time Entry": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeiteintrag bearbeiten"
+          }
+        }
+      }
+    },
+    "Edit entry": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eintrag bearbeiten"
+          }
+        }
+      }
+    },
+    "Edit…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bearbeiten …"
+          }
+        }
+      }
+    },
+    "End": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ende"
+          }
+        }
+      }
+    },
+    "End time must be after start time.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Endzeit muss nach der Startzeit liegen."
+          }
+        }
+      }
+    },
+    "Enter a name.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geben Sie einen Namen ein."
+          }
+        }
+      }
+    },
+    "Enter hours like +12:30, -4:15 or 7.5.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geben Sie Stunden ein, z. B. +12:30, -4:15 oder 7.5."
+          }
+        }
+      }
+    },
+    "Excel with German regional settings expects semicolons and decimal commas.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Excel mit deutschen Regionseinstellungen erwartet Semikolons und Dezimalkommas."
+          }
+        }
+      }
+    },
+    "Expected": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Soll"
+          }
+        }
+      }
+    },
+    "Expected (to date)": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Soll (bis heute)"
+          }
+        }
+      }
+    },
+    "Expected hours": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Soll-Stunden"
+          }
+        }
+      }
+    },
+    "Expected hours per weekday. Add a change when your contract changes — earlier balances keep the old schedule. Half-day holidays and half-day absences count half of that day's hours.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Soll-Stunden pro Wochentag. Erfassen Sie eine Änderung, wenn sich Ihr Vertrag ändert – frühere Saldi behalten das alte Pensum. Halbe Feiertage und halbe Abwesenheiten zählen die Hälfte der Stunden dieses Tages."
+          }
+        }
+      }
+    },
+    "Export": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Export"
+          }
+        }
+      }
+    },
+    "Export %@ as a CSV file": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ als CSV-Datei exportieren"
+          }
+        }
+      }
+    },
+    "Export CSV": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CSV exportieren"
+          }
+        }
+      }
+    },
+    "Export Time Report": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeitbericht exportieren"
+          }
+        }
+      }
+    },
+    "Export failed": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Export fehlgeschlagen"
+          }
+        }
+      }
+    },
+    "Family": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Familie"
+          }
+        }
+      }
+    },
+    "Format": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Format"
+          }
+        }
+      }
+    },
+    "From": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Von"
+          }
+        }
+      }
+    },
+    "From %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ab %@"
+          }
+        }
+      }
+    },
+    "From the start of tracking": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ab Beginn der Erfassung"
+          }
+        }
+      }
+    },
+    "Full days off on your working days — e.g. Karfreitag, Weihnachten, Bundesfeier": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ganze freie Tage an Ihren Arbeitstagen – z. B. Karfreitag, Weihnachten, Bundesfeier"
+          }
+        }
+      }
+    },
+    "Full year target: %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jahresziel: %@"
+          }
+        }
+      }
+    },
+    "Full-time week": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vollzeitwoche"
+          }
+        }
+      }
+    },
+    "General": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allgemein"
+          }
+        }
+      }
+    },
+    "Green": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grün"
+          }
+        }
+      }
+    },
+    "Half days off — Sechseläuten, Knabenschiessen, Silvester": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Halbe freie Tage – Sechseläuten, Knabenschiessen, Silvester"
+          }
+        }
+      }
+    },
+    "Has a newer version of Work Tracker; update this Mac": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hat eine neuere Version von Work Tracker – aktualisieren Sie diesen Mac"
+          }
+        }
+      }
+    },
+    "Holiday": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feiertag"
+          }
+        }
+      }
+    },
+    "Home": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zuhause"
+          }
+        }
+      }
+    },
+    "Hours": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stunden"
+          }
+        }
+      }
+    },
+    "Hours per day": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stunden pro Tag"
+          }
+        }
+      }
+    },
+    "Hours per project": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stunden pro Projekt"
+          }
+        }
+      }
+    },
+    "Icon": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Symbol"
+          }
+        }
+      }
+    },
+    "Indigo": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Indigo"
+          }
+        }
+      }
+    },
+    "Initial schedule": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anfangspensum"
+          }
+        }
+      }
+    },
+    "Jump to today (⌘T)": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zu heute springen (⌘T)"
+          }
+        }
+      }
+    },
+    "Keep Database Local & Back Up There": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Datenbank lokal behalten & dorthin sichern"
+          }
+        }
+      }
+    },
+    "Keep Them": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Behalten"
+          }
+        }
+      }
+    },
+    "Key": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schlüssel"
+          }
+        }
+      }
+    },
+    "Language": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sprache"
+          }
+        }
+      }
+    },
+    "Last backup": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Letztes Backup"
+          }
+        }
+      }
+    },
+    "Last synced": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zuletzt synchronisiert"
+          }
+        }
+      }
+    },
+    "Last updated": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zuletzt aktualisiert"
+          }
+        }
+      }
+    },
+    "Later": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Später"
+          }
+        }
+      }
+    },
+    "Latest backup: %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Letztes Backup: %@"
+          }
+        }
+      }
+    },
+    "Leaf": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blatt"
+          }
+        }
+      }
+    },
+    "Leave empty for the last-used project.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leer lassen für das zuletzt verwendete Projekt."
+          }
+        }
+      }
+    },
+    "Leave expected hours unchanged": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sollstunden unverändert lassen"
+          }
+        }
+      }
+    },
+    "Let AI assistants use Work Tracker": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KI-Assistenten Zugriff auf Work Tracker geben"
+          }
+        }
+      }
+    },
+    "Listening…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hört zu …"
+          }
+        }
+      }
+    },
+    "Log ${project} from ${start} to ${end}": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "${project} von ${start} bis ${end} erfassen"
+          }
+        }
+      }
+    },
+    "Log Work": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arbeit erfassen"
+          }
+        }
+      }
+    },
+    "Log time or start and stop the timer by voice (⇧⌘D)": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeit erfassen oder den Timer per Sprache starten und stoppen (⇧⌘D)"
+          }
+        }
+      }
+    },
+    "Logged %@ on %@ (%@–%@).": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ auf %@ erfasst (%@–%@)."
+          }
+        }
+      }
+    },
+    "Manage Categories": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kategorien verwalten"
+          }
+        }
+      }
+    },
+    "Manage Categories…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kategorien verwalten…"
+          }
+        }
+      }
+    },
+    "Mint": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mint"
+          }
+        }
+      }
+    },
+    "Month": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Monat"
+          }
+        }
+      }
+    },
+    "Monthly Breakdown": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Monatsübersicht"
+          }
+        }
+      }
+    },
+    "More": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mehr"
+          }
+        }
+      }
+    },
+    "More actions": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weitere Aktionen"
+          }
+        }
+      }
+    },
+    "Move Database to This Mac & Back Up to This Folder": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Datenbank auf diesen Mac verschieben & in diesen Ordner sichern"
+          }
+        }
+      }
+    },
+    "Moving copies a consistent snapshot of your data to the new folder and restarts the app. The old copy is left in place.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beim Verschieben wird ein konsistenter Schnappschuss Ihrer Daten in den neuen Ordner kopiert und die App neu gestartet. Die alte Kopie bleibt erhalten."
+          }
+        }
+      }
+    },
+    "Name": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name"
+          }
+        }
+      }
+    },
+    "New Key": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neuer Schlüssel"
+          }
+        }
+      }
+    },
+    "New Project": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neues Projekt"
+          }
+        }
+      }
+    },
+    "New Project (⌘N)": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neues Projekt (⌘N)"
+          }
+        }
+      }
+    },
+    "New Time Entry": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neuer Zeiteintrag"
+          }
+        }
+      }
+    },
+    "Next Day": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nächster Tag"
+          }
+        }
+      }
+    },
+    "Next day (⌘])": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nächster Tag (⌘])"
+          }
+        }
+      }
+    },
+    "No backups yet.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch keine Backups."
+          }
+        }
+      }
+    },
+    "No custom categories yet.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch keine eigenen Kategorien."
+          }
+        }
+      }
+    },
+    "No earlier entries to copy": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine früheren Einträge zum Kopieren"
+          }
+        }
+      }
+    },
+    "No entries": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Einträge"
+          }
+        }
+      }
+    },
+    "No entries for this day": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Einträge für diesen Tag"
+          }
+        }
+      }
+    },
+    "No other Mac yet. Turn on sync in Work Tracker on your other Mac too.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch kein anderer Mac. Schalten Sie die Synchronisierung auch in Work Tracker auf Ihrem anderen Mac ein."
+          }
+        }
+      }
+    },
+    "No scheduled work": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Arbeit geplant"
+          }
+        }
+      }
+    },
+    "No time entries yet": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch keine Zeiteinträge"
+          }
+        }
+      }
+    },
+    "No timer is running.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Es läuft kein Timer."
+          }
+        }
+      }
+    },
+    "No work logged in this period": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In diesem Zeitraum keine Arbeit erfasst"
+          }
+        }
+      }
+    },
+    "Not set": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nicht festgelegt"
+          }
+        }
+      }
+    },
+    "Note": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notiz"
+          }
+        }
+      }
+    },
+    "OK": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        }
+      }
+    },
+    "Off": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Frei"
+          }
+        }
+      }
+    },
+    "Open Privacy Settings": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Datenschutzeinstellungen öffnen"
+          }
+        }
+      }
+    },
+    "Open Work Tracker": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Work Tracker öffnen"
+          }
+        }
+      }
+    },
+    "Opening balance": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anfangssaldo"
+          }
+        }
+      }
+    },
+    "Optional": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Optional"
+          }
+        }
+      }
+    },
+    "Orange": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Orange"
+          }
+        }
+      }
+    },
+    "Other": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Andere"
+          }
+        }
+      }
+    },
+    "Other Macs": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Andere Macs"
+          }
+        }
+      }
+    },
+    "Other absence": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Andere Abwesenheit"
+          }
+        }
+      }
+    },
+    "Over vacation allowance": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Über dem Ferienguthaben"
+          }
+        }
+      }
+    },
+    "Overlaps with %@–%@.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Überschneidet sich mit %@–%@."
+          }
+        }
+      }
+    },
+    "Overtime (+) or undertime (−) carried in from before the start date. Added to the all-time balance.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Über- (+) oder Minusstunden (−) aus der Zeit vor dem Startdatum. Werden zum Gesamtsaldo addiert."
+          }
+        }
+      }
+    },
+    "Overview": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Übersicht"
+          }
+        }
+      }
+    },
+    "Part-time": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teilzeit"
+          }
+        }
+      }
+    },
+    "Per week": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro Woche"
+          }
+        }
+      }
+    },
+    "Pink": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pink"
+          }
+        }
+      }
+    },
+    "Port %@ is in use by another app.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Port %@ wird von einer anderen App verwendet."
+          }
+        }
+      }
+    },
+    "Press any key, or click anywhere, to start your day": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drücken Sie eine Taste oder klicken Sie irgendwohin, um Ihren Tag zu beginnen"
+          }
+        }
+      }
+    },
+    "Preview": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vorschau"
+          }
+        }
+      }
+    },
+    "Previous Day": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vorheriger Tag"
+          }
+        }
+      }
+    },
+    "Previous day (⌘[)": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vorheriger Tag (⌘[)"
+          }
+        }
+      }
+    },
+    "Project": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Projekt"
+          }
+        }
+      }
+    },
+    "Project name": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Projektname"
+          }
+        }
+      }
+    },
+    "Projects": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Projekte"
+          }
+        }
+      }
+    },
+    "Public Service": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Öffentlicher Dienst"
+          }
+        }
+      }
+    },
+    "Purple": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Violett"
+          }
+        }
+      }
+    },
+    "Quit": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beenden"
+          }
+        }
+      }
+    },
+    "Red": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rot"
+          }
+        }
+      }
+    },
+    "Reduce expected hours": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sollstunden reduzieren"
+          }
+        }
+      }
+    },
+    "Reducing expected hours gives time off without using vacation. Vacation categories share your annual allowance. Unchanged hours give no time credit.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reduzierte Sollstunden geben frei, ohne Ferien zu verbrauchen. Ferienkategorien teilen sich das jährliche Guthaben. Unveränderte Stunden geben keine Zeitgutschrift."
+          }
+        }
+      }
+    },
+    "Remaining: %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbleibend: %@"
+          }
+        }
+      }
+    },
+    "Remove this schedule change": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diese Pensumsänderung entfernen"
+          }
+        }
+      }
+    },
+    "Rename": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Umbenennen"
+          }
+        }
+      }
+    },
+    "Rename project": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Projekt umbenennen"
+          }
+        }
+      }
+    },
+    "Replace It with the Current Data": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Durch die aktuellen Daten ersetzen"
+          }
+        }
+      }
+    },
+    "Replace and Restart": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ersetzen und neu starten"
+          }
+        }
+      }
+    },
+    "Replace the database with the synced data?": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Datenbank durch die synchronisierten Daten ersetzen?"
+          }
+        }
+      }
+    },
+    "Replace with Synced Data…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Durch synchronisierte Daten ersetzen…"
+          }
+        }
+      }
+    },
+    "Reset to Default": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auf Standard zurücksetzen"
+          }
+        }
+      }
+    },
+    "Restart Now": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jetzt neu starten"
+          }
+        }
+      }
+    },
+    "Restart Required": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neustart erforderlich"
+          }
+        }
+      }
+    },
+    "Restore": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wiederherstellen"
+          }
+        }
+      }
+    },
+    "Restore Latest Backup…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Letztes Backup wiederherstellen …"
+          }
+        }
+      }
+    },
+    "Restore Them": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wiederherstellen"
+          }
+        }
+      }
+    },
+    "Restore and Restart": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wiederherstellen und neu starten"
+          }
+        }
+      }
+    },
+    "Restore failed: %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wiederherstellung fehlgeschlagen: %@"
+          }
+        }
+      }
+    },
+    "Restore project": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Projekt wiederherstellen"
+          }
+        }
+      }
+    },
+    "Restore the latest backup?": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Letztes Backup wiederherstellen?"
+          }
+        }
+      }
+    },
+    "Restore this backup?": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieses Backup wiederherstellen?"
+          }
+        }
+      }
+    },
+    "Restored the backup from %@.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das Backup vom %@ wurde wiederhergestellt."
+          }
+        }
+      }
+    },
+    "Restore…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wiederherstellen …"
+          }
+        }
+      }
+    },
+    "Right Now": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktuell"
+          }
+        }
+      }
+    },
+    "Run the Claude Code command in Terminal, or add the Codex settings to ~/.codex/config.toml. Both contain the key. A new key locks out assistants set up with the old one until you set them up again.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Führen Sie den Befehl für Claude Code im Terminal aus, oder fügen Sie die Einstellungen für Codex in ~/.codex/config.toml ein. Beide enthalten den Schlüssel. Mit einem neuen Schlüssel sind Assistenten, die mit dem alten eingerichtet wurden, ausgesperrt, bis Sie sie neu einrichten."
+          }
+        }
+      }
+    },
+    "Save": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speichern"
+          }
+        }
+      }
+    },
+    "Saved %@ on %@.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ auf %@ gespeichert."
+          }
+        }
+      }
+    },
+    "Saved the time on %@ and started the timer for %@.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeit auf %@ gespeichert und Timer für %@ gestartet."
+          }
+        }
+      }
+    },
+    "Say “Starting work on %@”, “Stopping work” or “Yesterday 8 to 12 on %@”.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sagen Sie «Ich beginne mit %@», «Feierabend» oder «Gestern 8 bis 12 an %@»."
+          }
+        }
+      }
+    },
+    "Select a project.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bitte wählen Sie ein Projekt aus."
+          }
+        }
+      }
+    },
+    "Select an item from the sidebar": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wählen Sie einen Eintrag in der Seitenleiste"
+          }
+        }
+      }
+    },
+    "Semicolon-separated (Excel, German)": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Semikolon-getrennt (Excel, Deutsch)"
+          }
+        }
+      }
+    },
+    "Sets each weekday to the workload's share of a full-time week. Adjust single days above afterwards.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setzt jeden Wochentag auf den Anteil des Pensums an einer Vollzeitwoche. Einzelne Tage können Sie danach oben anpassen."
+          }
+        }
+      }
+    },
+    "Setup": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einrichtung"
+          }
+        }
+      }
+    },
+    "Show Backups": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sicherungen anzeigen"
+          }
+        }
+      }
+    },
+    "Show Database in Finder": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Datenbank im Finder zeigen"
+          }
+        }
+      }
+    },
+    "Show Sync Folder": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sync-Ordner anzeigen"
+          }
+        }
+      }
+    },
+    "Show absences in Calendar": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abwesenheiten im Kalender anzeigen"
+          }
+        }
+      }
+    },
+    "Show an inspirational quote on launch": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beim Start ein inspirierendes Zitat anzeigen"
+          }
+        }
+      }
+    },
+    "Show in Finder": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Im Finder zeigen"
+          }
+        }
+      }
+    },
+    "Sick": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Krank"
+          }
+        }
+      }
+    },
+    "Speech recognition doesn’t support this language on this Mac.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Spracherkennung unterstützt diese Sprache auf diesem Mac nicht."
+          }
+        }
+      }
+    },
+    "Spread Evenly over Monday–Friday": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gleichmässig auf Montag–Freitag verteilen"
+          }
+        }
+      }
+    },
+    "Start": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beginn"
+          }
+        }
+      }
+    },
+    "Start Timer": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Timer starten"
+          }
+        }
+      }
+    },
+    "Start Work": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arbeit beginnen"
+          }
+        }
+      }
+    },
+    "Start a timer for a project": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Timer für ein Projekt starten"
+          }
+        }
+      }
+    },
+    "Start date": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Startdatum"
+          }
+        }
+      }
+    },
+    "Start with This Mac’s Data": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mit den Daten dieses Macs beginnen"
+          }
+        }
+      }
+    },
+    "Start work on ${project}": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arbeit an ${project} beginnen"
+          }
+        }
+      }
+    },
+    "Started the timer for %@.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Timer für %@ gestartet."
+          }
+        }
+      }
+    },
+    "Starting…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wird gestartet …"
+          }
+        }
+      }
+    },
+    "Starts the timer for a project. A running timer is saved first.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Startet den Timer für ein Projekt. Ein laufender Timer wird zuerst gespeichert."
+          }
+        }
+      }
+    },
+    "Stop %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stopp %@"
+          }
+        }
+      }
+    },
+    "Stop Copying": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nicht mehr kopieren"
+          }
+        }
+      }
+    },
+    "Stop Work": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arbeit beenden"
+          }
+        }
+      }
+    },
+    "Stop the timer and save the tracked time (%@)": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Timer stoppen und die erfasste Zeit speichern (%@)"
+          }
+        }
+      }
+    },
+    "Stopped the timer; nothing to save.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Timer gestoppt; nichts zu speichern."
+          }
+        }
+      }
+    },
+    "Stops the timer and saves the tracked time as entries.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stoppt den Timer und speichert die erfasste Zeit als Einträge."
+          }
+        }
+      }
+    },
+    "Storage": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speicherort"
+          }
+        }
+      }
+    },
+    "Store the Database There Anyway": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Datenbank trotzdem dort speichern"
+          }
+        }
+      }
+    },
+    "Study": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Studium"
+          }
+        }
+      }
+    },
+    "Switch Project": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Projekt wechseln"
+          }
+        }
+      }
+    },
+    "Sync": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Synchronisierung"
+          }
+        }
+      }
+    },
+    "Sync Between Macs": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Synchronisierung zwischen Macs"
+          }
+        }
+      }
+    },
+    "Sync Now": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jetzt synchronisieren"
+          }
+        }
+      }
+    },
+    "Sync clients upload the database and its journal separately and can create conflicting copies, which can corrupt or lose data. Keep the database on this Mac and let the app copy verified backups into the cloud folder instead.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sync-Dienste laden die Datenbank und ihr Journal getrennt hoch und können widersprüchliche Kopien erzeugen – das kann Daten beschädigen oder verlieren. Behalten Sie die Datenbank auf diesem Mac und lassen Sie die App stattdessen geprüfte Backups in den Cloud-Ordner kopieren."
+          }
+        }
+      }
+    },
+    "Sync is paused": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Synchronisierung angehalten"
+          }
+        }
+      }
+    },
+    "Sync was turned off because its records on this Mac are missing. Turn it on again to continue.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Synchronisierung wurde ausgeschaltet, weil ihre Aufzeichnungen auf diesem Mac fehlen. Schalten Sie sie wieder ein, um weiterzumachen."
+          }
+        }
+      }
+    },
+    "Sync with your other Macs": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mit Ihren anderen Macs synchronisieren"
+          }
+        }
+      }
+    },
+    "Syncing would delete %@ items on this Mac too. Sync waits, in case that wasn’t meant to happen. Delete them here as well (this Mac’s data is backed up first), or keep them and bring them back on all Macs.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Synchronisierung würde %@ Elemente auch auf diesem Mac löschen. Sie wartet, falls das nicht beabsichtigt war. Löschen Sie sie auch hier (die Daten dieses Macs werden vorher gesichert), oder behalten Sie sie und stellen Sie sie auf allen Macs wieder her."
+          }
+        }
+      }
+    },
+    "System": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "System"
+          }
+        }
+      }
+    },
+    "Teal": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Türkis"
+          }
+        }
+      }
+    },
+    "That folder already contains a Work Tracker database": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieser Ordner enthält bereits eine Work-Tracker-Datenbank"
+          }
+        }
+      }
+    },
+    "That folder already contains a Work Tracker database.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieser Ordner enthält bereits eine Work-Tracker-Datenbank."
+          }
+        }
+      }
+    },
+    "The backup file no longer exists.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Backup-Datei existiert nicht mehr."
+          }
+        }
+      }
+    },
+    "The current database is moved into the Backups folder, not deleted.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die aktuelle Datenbank wird in den Backup-Ordner verschoben, nicht gelöscht."
+          }
+        }
+      }
+    },
+    "The database is already in that folder.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Datenbank befindet sich bereits in diesem Ordner."
+          }
+        }
+      }
+    },
+    "The database that couldn’t be opened is in the Backups folder. Work Tracker fills the new one from sync.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Datenbank, die sich nicht öffnen liess, liegt im Backup-Ordner. Work Tracker füllt die neue mit den synchronisierten Daten."
+          }
+        }
+      }
+    },
+    "The database there was last changed %@. Replacing it keeps the old file in Backups.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die dortige Datenbank wurde zuletzt am %@ geändert. Beim Ersetzen bleibt die alte Datei im Backup-Ordner erhalten."
+          }
+        }
+      }
+    },
+    "The destination already exists.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das Ziel existiert bereits."
+          }
+        }
+      }
+    },
+    "The other Macs’ data is no longer in the sync folder, so nothing was replaced.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Daten der anderen Macs sind nicht mehr im Sync-Ordner, darum wurde nichts ersetzt."
+          }
+        }
+      }
+    },
+    "There is no database to copy.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Es gibt keine Datenbank zum Kopieren."
+          }
+        }
+      }
+    },
+    "There’s no calendar account to add the Work Tracker calendar to.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Es gibt kein Kalenderkonto, in dem der Kalender «Work Tracker» angelegt werden kann."
+          }
+        }
+      }
+    },
+    "There’s no project called %@.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Es gibt kein Projekt namens %@."
+          }
+        }
+      }
+    },
+    "This Mac doesn’t support Apple Intelligence.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieser Mac unterstützt Apple Intelligence nicht."
+          }
+        }
+      }
+    },
+    "This Mac has %@ items of its own, and the synced data from %@ has %@. Combine them, or keep only one side’s data. Combining takes the schedule, vacation and balance settings from the other Macs. Whatever is replaced on this Mac is backed up first.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieser Mac hat %@ eigene Elemente, die synchronisierten Daten von %@ haben %@. Führen Sie sie zusammen, oder behalten Sie nur die Daten einer Seite. Beim Zusammenführen kommen Arbeitspensum, Ferien- und Saldo-Einstellungen von den anderen Macs. Was auf diesem Mac ersetzt wird, wird vorher gesichert."
+          }
+        }
+      }
+    },
+    "This Mac has no data to start with yet. Add some, or turn on sync on the Mac that has your data.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieser Mac hat noch keine Daten, mit denen er beginnen könnte. Erfassen Sie zuerst welche, oder schalten Sie die Synchronisierung auf dem Mac mit Ihren Daten ein."
+          }
+        }
+      }
+    },
+    "This Mac now uses the schedule, vacation and balance settings of your other Macs. Its previous settings are saved in the Backups folder.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieser Mac verwendet jetzt das Arbeitspensum, die Ferien- und die Saldo-Einstellungen Ihrer anderen Macs. Seine bisherigen Einstellungen sind im Backup-Ordner gespeichert."
+          }
+        }
+      }
+    },
+    "This Mac uses a different database": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieser Mac verwendet eine andere Datenbank"
+          }
+        }
+      }
+    },
+    "This Mac’s data could not be backed up, so it was not replaced.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Daten dieses Macs konnten nicht gesichert werden und wurden deshalb nicht ersetzt."
+          }
+        }
+      }
+    },
+    "This Mac’s settings couldn’t be saved before replacing them, so nothing was changed: %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Einstellungen dieses Macs konnten vor dem Ersetzen nicht gesichert werden, darum wurde nichts geändert: %@"
+          }
+        }
+      }
+    },
+    "This Month": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieser Monat"
+          }
+        }
+      }
+    },
+    "This Week": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diese Woche"
+          }
+        }
+      }
+    },
+    "This folder is synced by a cloud service": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieser Ordner wird von einem Cloud-Dienst synchronisiert"
+          }
+        }
+      }
+    },
+    "This was a working day. Press ⌘N to log your time, or record an absence in Absences.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dies war ein Arbeitstag. Drücken Sie ⌘N, um Ihre Zeit zu erfassen, oder tragen Sie unter Abwesenheiten eine Abwesenheit ein."
+          }
+        }
+      }
+    },
+    "Time Entries…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeiteinträge …"
+          }
+        }
+      }
+    },
+    "Time Report": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeitauswertung"
+          }
+        }
+      }
+    },
+    "Time entry %@ to %@, %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeiteintrag %@ bis %@, %@"
+          }
+        }
+      }
+    },
+    "To": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bis"
+          }
+        }
+      }
+    },
+    "Today": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heute"
+          }
+        }
+      }
+    },
+    "Total": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total"
+          }
+        }
+      }
+    },
+    "Tracking": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erfassung"
+          }
+        }
+      }
+    },
+    "Tracking since": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erfassung seit"
+          }
+        }
+      }
+    },
+    "Training": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weiterbildung"
+          }
+        }
+      }
+    },
+    "Try Again": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erneut versuchen"
+          }
+        }
+      }
+    },
+    "Turn on Apple Intelligence in System Settings to use voice entry.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktivieren Sie Apple Intelligence in den Systemeinstellungen, um die Spracheingabe zu verwenden."
+          }
+        }
+      }
+    },
+    "Type to search…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zum Suchen tippen …"
+          }
+        }
+      }
+    },
+    "Understanding…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wird verarbeitet …"
+          }
+        }
+      }
+    },
+    "Unpaid Leave": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unbezahlter Urlaub"
+          }
+        }
+      }
+    },
+    "Updated %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktualisiert: %@"
+          }
+        }
+      }
+    },
+    "Use Only This Mac’s Data": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nur die Daten dieses Macs verwenden"
+          }
+        }
+      }
+    },
+    "Use Only the Other Macs’ Data": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nur die Daten der anderen Macs verwenden"
+          }
+        }
+      }
+    },
+    "Use This Database on All Macs": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diese Datenbank auf allen Macs verwenden"
+          }
+        }
+      }
+    },
+    "Use the Data Already There": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die dortigen Daten verwenden"
+          }
+        }
+      }
+    },
+    "Use the Synced Data": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Synchronisierte Daten verwenden"
+          }
+        }
+      }
+    },
+    "Use vacation allowance": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ferienguthaben verwenden"
+          }
+        }
+      }
+    },
+    "Vacation": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ferien"
+          }
+        }
+      }
+    },
+    "Vacation beyond a year's allowance gets no time credit — those days count as normal working days.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ferien über dem Jahresguthaben werden nicht gutgeschrieben – diese Tage zählen als normale Arbeitstage."
+          }
+        }
+      }
+    },
+    "Vacation days used this year (Jan–Dec). Half-day holidays count as 0.5 days.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In diesem Jahr (Jan–Dez) genutzte Ferientage. Halbtags-Feiertage zählen als 0,5 Tage."
+          }
+        }
+      }
+    },
+    "Vacation days used this year, of %@ entitlement plus %@ carried over. Half-day holidays count as 0.5 days.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieses Jahr bezogene Ferientage, von %@ Anspruch plus %@ Übertrag. Halbe Feiertage zählen als 0.5 Tage."
+          }
+        }
+      }
+    },
+    "Voice Entry": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spracheingabe"
+          }
+        }
+      }
+    },
+    "Waiting for data from your other Macs. Anything you add here meanwhile is added to theirs. If no other Mac syncs yet, start with this Mac’s data instead.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wartet auf Daten Ihrer anderen Macs. Was Sie hier inzwischen erfassen, kommt zu deren Daten hinzu. Synchronisiert noch kein anderer Mac, beginnen Sie stattdessen mit den Daten dieses Macs."
+          }
+        }
+      }
+    },
+    "Weekday": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wochentag"
+          }
+        }
+      }
+    },
+    "Weekend": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wochenende"
+          }
+        }
+      }
+    },
+    "Work": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arbeit"
+          }
+        }
+      }
+    },
+    "Work Schedule": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arbeitspensum"
+          }
+        }
+      }
+    },
+    "Work Tracker %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Work Tracker %@"
+          }
+        }
+      }
+    },
+    "Work Tracker can’t open its database": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Work Tracker kann seine Datenbank nicht öffnen"
+          }
+        }
+      }
+    },
+    "Work Tracker can’t open its database.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Work Tracker kann seine Datenbank nicht öffnen."
+          }
+        }
+      }
+    },
+    "Work Tracker couldn’t back up this Mac’s data, so it didn’t delete anything. It tries again at the next sync.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Work Tracker konnte die Daten dieses Macs nicht sichern und hat darum nichts gelöscht. Bei der nächsten Synchronisierung versucht es Work Tracker erneut."
+          }
+        }
+      }
+    },
+    "Work Tracker isn’t allowed to use iCloud Drive. Allow it in System Settings ▸ Privacy & Security ▸ Files & Folders, then sync again.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Work Tracker darf iCloud Drive nicht verwenden. Erlauben Sie es in den Systemeinstellungen ▸ Datenschutz & Sicherheit ▸ Dateien & Ordner und synchronisieren Sie dann erneut."
+          }
+        }
+      }
+    },
+    "Work Tracker isn’t allowed to use your calendars. Allow it in System Settings ▸ Privacy & Security ▸ Calendars.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Work Tracker hat keinen Zugriff auf Ihre Kalender. Erlauben Sie ihn unter Systemeinstellungen ▸ Datenschutz & Sicherheit ▸ Kalender."
+          }
+        }
+      }
+    },
+    "Work Tracker moves the current database into the Backups folder, restarts with an empty one and fills it with the data from sync.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Work Tracker verschiebt die aktuelle Datenbank in den Backup-Ordner, startet mit einer leeren neu und füllt sie mit den synchronisierten Daten."
+          }
+        }
+      }
+    },
+    "Work Tracker needs microphone access. Allow it in System Settings ▸ Privacy & Security ▸ Microphone.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Work Tracker braucht Zugriff auf das Mikrofon. Erlauben Sie ihn unter Systemeinstellungen ▸ Datenschutz & Sicherheit ▸ Mikrofon."
+          }
+        }
+      }
+    },
+    "Work Tracker restarts and replaces the current data with the backup from %@. The current database is kept in the Backups folder.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Work Tracker startet neu und ersetzt die aktuellen Daten durch das Backup vom %@. Die aktuelle Datenbank bleibt im Backup-Ordner erhalten."
+          }
+        }
+      }
+    },
+    "Work Tracker restarts to use the new location. Changes are only saved there after the restart.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Work Tracker startet neu, um den neuen Speicherort zu verwenden. Änderungen werden erst nach dem Neustart dort gespeichert."
+          }
+        }
+      }
+    },
+    "Worked": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geleistet"
+          }
+        }
+      }
+    },
+    "Worked (to date)": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geleistet (bis heute)"
+          }
+        }
+      }
+    },
+    "Worked hours": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ist-Stunden"
+          }
+        }
+      }
+    },
+    "Working days since tracking started with no time entries or full-day absence": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arbeitstage seit Erfassungsbeginn ohne Zeiteinträge oder ganztägige Abwesenheit"
+          }
+        }
+      }
+    },
+    "Working days with no time entries or full-day absence. Daily Entry lists them.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arbeitstage ohne Zeiteinträge oder ganztägige Abwesenheit. Die Tageserfassung listet sie auf."
+          }
+        }
+      }
+    },
+    "Workload": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pensum"
+          }
+        }
+      }
+    },
+    "Year": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jahr"
+          }
+        }
+      }
+    },
+    "Your Macs sync, so turn this on for only one of them.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ihre Macs werden synchronisiert – schalten Sie dies nur auf einem davon ein."
+          }
+        }
+      }
+    },
+    "Your data has not been changed. You can restore the latest backup (the current file is kept), or quit and investigate the files first.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ihre Daten wurden nicht verändert. Sie können das letzte Backup wiederherstellen (die aktuelle Datei bleibt erhalten) oder die App beenden und die Dateien zuerst untersuchen."
+          }
+        }
+      }
+    },
+    "Your database is in a cloud-synced folder": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ihre Datenbank liegt in einem Cloud-synchronisierten Ordner"
+          }
+        }
+      }
+    },
+    "Your other Macs already sync their data": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ihre anderen Macs synchronisieren bereits ihre Daten"
+          }
+        }
+      }
+    },
+    "Your other Macs also go back to this backup.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auch Ihre anderen Macs kehren zu diesem Backup zurück."
+          }
+        }
+      }
+    },
+    "daily": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "tagesuebersicht"
+          }
+        }
+      }
+    },
+    "entries": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "eintraege"
+          }
+        }
+      }
+    },
+    "half-day holiday": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Halbtags-Feiertag"
+          }
+        }
+      }
+    },
+    "hours": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stunden"
+          }
+        }
+      }
+    },
+    "iCloud Drive is off on this Mac. Turn it on in System Settings ▸ Apple Account ▸ iCloud.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud Drive ist auf diesem Mac ausgeschaltet. Schalten Sie es in den Systemeinstellungen ▸ Apple Account ▸ iCloud ein."
+          }
+        }
+      }
+    },
+    "incl. %@ carried over": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "inkl. %@ Übertrag"
+          }
+        }
+      }
+    },
+    "incl. %@ opening balance": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "inkl. %@ Anfangssaldo"
+          }
+        }
+      }
+    },
+    "no absence": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "keine Abwesenheit"
+          }
+        }
+      }
+    },
+    "of %@ expected": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "von %@ erwartet"
+          }
+        }
+      }
+    },
+    "overtime": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Überstunden"
+          }
+        }
+      }
+    },
+    "this year": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dieses Jahr"
+          }
+        }
+      }
+    },
+    "undertime": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Minusstunden"
+          }
+        }
+      }
+    },
+    "· +%@ over": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "· +%@ über Soll"
+          }
+        }
+      }
+    },
+    "“%@” deleted many items": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "«%@» hat viele Elemente gelöscht"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

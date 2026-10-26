@@ -1,0 +1,57 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "NSCalendarsFullAccessUsageDescription": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Work Tracker trägt Ihre Abwesenheiten als ganztägige Ereignisse in einen eigenen Kalender «Work Tracker» ein und hält sie aktuell."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Work Tracker adds your absences as all-day events to its own “Work Tracker” calendar and keeps them up to date."
+          }
+        }
+      }
+    },
+    "NSMicrophoneUsageDescription": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Work Tracker hört zu, wenn Sie mit der Spracheingabe Zeit erfassen oder den Timer starten und stoppen. Die Sprache wird auf diesem Mac verarbeitet."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Work Tracker listens when you use voice entry to log time or start and stop the timer. Speech is processed on this Mac."
+          }
+        }
+      }
+    },
+    "NSSpeechRecognitionUsageDescription": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Spracheingabe wandelt das Gesagte auf diesem Mac in Zeiteinträge und Timer-Befehle um."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voice entry turns what you say into time entries and timer commands, on this Mac."
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

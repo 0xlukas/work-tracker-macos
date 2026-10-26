@@ -1,0 +1,35 @@
+{
+  "fill-specializations" : [
+    {
+      "value" : {
+        "linear-gradient" : [
+          "display-p3:0.200,0.200,0.200,1.000",
+          "display-p3:0.040,0.040,0.040,1.000"
+        ],
+        "orientation" : {
+          "start" : { "x" : 0.5, "y" : 0 },
+          "stop" : { "x" : 0.5, "y" : 1 }
+        }
+      }
+    }
+  ],
+  "groups" : [
+    {
+      "name" : "Portrait",
+      "layers" : [
+        {
+          "name" : "Portrait",
+          "image-name" : "portrait.svg",
+          "glass" : true,
+          "fill" : { "solid" : "display-p3:1.000,1.000,1.000,1.000" }
+        }
+      ],
+      "shadow" : { "kind" : "neutral", "opacity" : 0.5 },
+      "specular" : false,
+      "translucency" : { "enabled" : false, "value" : 0 }
+    }
+  ],
+  "supported-platforms" : {
+    "squares" : [ "macOS" ]
+  }
+}

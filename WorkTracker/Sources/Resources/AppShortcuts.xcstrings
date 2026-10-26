@@ -1,0 +1,116 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "Log time on ${project} in ${applicationName}": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeit für ${project} in ${applicationName} erfassen"
+          }
+        }
+      }
+    },
+    "Log work in ${applicationName}": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arbeit in ${applicationName} erfassen"
+          }
+        }
+      }
+    },
+    "Start ${project} in ${applicationName}": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Starte ${project} in ${applicationName}"
+          }
+        }
+      }
+    },
+    "Start the timer in ${applicationName}": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Starte den Timer in ${applicationName}"
+          }
+        }
+      }
+    },
+    "Start work on ${project} in ${applicationName}": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arbeit an ${project} in ${applicationName} beginnen"
+          }
+        }
+      }
+    },
+    "Start working in ${applicationName}": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arbeit in ${applicationName} beginnen"
+          }
+        }
+      }
+    },
+    "Starting work on ${project} in ${applicationName}": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ich beginne mit ${project} in ${applicationName}"
+          }
+        }
+      }
+    },
+    "Stop the timer in ${applicationName}": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stoppe den Timer in ${applicationName}"
+          }
+        }
+      }
+    },
+    "Stop work in ${applicationName}": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arbeit in ${applicationName} beenden"
+          }
+        }
+      }
+    },
+    "Stop working in ${applicationName}": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ich höre in ${applicationName} auf"
+          }
+        }
+      }
+    },
+    "Stopping work in ${applicationName}": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feierabend in ${applicationName}"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}
