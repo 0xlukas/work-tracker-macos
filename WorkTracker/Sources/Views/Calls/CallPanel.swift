@@ -11,12 +11,14 @@ final class CallControl {
     private(set) var shortcutUnavailable = false
 
     @ObservationIgnored private let preferences: Preferences
+    @ObservationIgnored private let defaults: UserDefaults
     @ObservationIgnored private var container: ModelContainer?
     @ObservationIgnored private var panel: CallPanelWindow?
     @ObservationIgnored private var hotKey: GlobalHotKey?
 
-    init(preferences: Preferences = .shared) {
+    init(preferences: Preferences = .shared, defaults: UserDefaults = .standard) {
         self.preferences = preferences
+        self.defaults = defaults
     }
 
     func start(container: ModelContainer) {
@@ -47,14 +49,29 @@ final class CallControl {
                 onCancel: { [weak self] in self?.close() })
                 .modelContainer(container)
                 .environment(\.locale, Localization.locale))
-            controller.sizingOptions = .preferredContentSize
+            // The panel keeps the size measured here, once the form is in it (so the title
+            // bar counts). Letting SwiftUI resize it while AppKit laid it out
+            // (`.preferredContentSize`) looped until AppKit gave up and the app crashed; the
+            // form keeps one height whatever is typed, so this size always fits.
+            controller.sizingOptions = []
             panel.contentViewController = controller
-            if !panel.setFrameUsingName(Self.frameName) { panel.center() }
+            let size = controller.sizeThatFits(in: CGSize(width: CallPanelView.width, height: 2000))
+            panel.setContentSize(NSSize(width: size.width.rounded(.up), height: size.height.rounded(.up)))
+            if let saved = defaults.string(forKey: Self.positionKey) {
+                panel.setFrameTopLeftPoint(NSPointFromString(saved))
+                panel.setFrame(panel.constrainFrameRect(panel.frame, to: panel.screen ?? NSScreen.main), display: false)
+            } else {
+                panel.center()
+            }
         }
         panel.makeKeyAndOrderFront(nil)
     }
 
     func close() {
+        // Where the panel was, for the next call.
+        if let panel, panel.isVisible {
+            defaults.set(NSStringFromPoint(NSPoint(x: panel.frame.minX, y: panel.frame.maxY)), forKey: Self.positionKey)
+        }
         panel?.orderOut(nil)
         // Drop the form, so the next call starts empty.
         panel?.contentViewController = nil
@@ -68,12 +85,11 @@ final class CallControl {
         close()
     }
 
-    private static let frameName = "CallPanel"
+    private static let positionKey = "callPanelTopLeft"
 
     private func makePanel() -> CallPanelWindow {
         let panel = CallPanelWindow()
         panel.onCancel = { [weak self] in self?.close() }
-        panel.setFrameAutosaveName(Self.frameName)
         self.panel = panel
         return panel
     }
@@ -168,6 +184,10 @@ struct CallPanelView: View {
 
     private var hasCaller: Bool { !CallNames.trimmed(caller).isEmpty }
 
+    static let width: CGFloat = 440
+    /// The fields' column, so long names can't widen the form.
+    private let fieldWidth: CGFloat = 300
+
     var body: some View {
         let suggestions = CallSuggestions(calls: recentCalls)
         VStack(alignment: .leading, spacing: 14) {
@@ -194,6 +214,7 @@ struct CallPanelView: View {
                                         onSubmit: { topicFocusRequest += 1 })
                         nameButtons(suggestions.recentCallers, selection: $caller)
                     }
+                    .frame(width: fieldWidth, alignment: .leading)
                 }
                 GridRow {
                     Text(tr("Topic"))
@@ -202,13 +223,15 @@ struct CallPanelView: View {
                         SuggestionField(text: $topic, suggestions: suggestions.topicList(for: caller),
                                         placeholder: tr("What about?"), focusRequest: topicFocusRequest,
                                         onSubmit: { noteFocused = true })
-                        nameButtons(Array(suggestions.topics(of: caller).prefix(4)), selection: $topic)
+                        nameButtons(suggestions.topics(of: caller), selection: $topic)
                     }
+                    .frame(width: fieldWidth, alignment: .leading)
                 }
                 GridRow {
                     Text(tr("Department"))
                         .foregroundStyle(.secondary)
                     departmentPicker
+                        .frame(width: fieldWidth, alignment: .leading)
                 }
                 GridRow {
                     Text(tr("Note"))
@@ -216,6 +239,7 @@ struct CallPanelView: View {
                     TextField(tr("Note"), text: $note, prompt: Text(tr("Optional")))
                         .labelsHidden()
                         .focused($noteFocused)
+                        .frame(width: fieldWidth)
                 }
                 GridRow {
                     Color.clear
@@ -244,6 +268,8 @@ struct CallPanelView: View {
                 Text(hasCaller ? tr("Clicking the length saves the call.") : tr("Enter who called, then click how long it took."))
                     .font(.caption)
                     .foregroundStyle(.secondary)
+                    // Two lines either way (the German hint wraps), so the form keeps its height.
+                    .lineLimit(2, reservesSpace: true)
                 Spacer()
                 Button(tr("Cancel"), action: onCancel)
                     .keyboardShortcut(.cancelAction)
@@ -253,7 +279,7 @@ struct CallPanelView: View {
         .padding(.horizontal, 20)
         .padding(.top, 18)
         .padding(.bottom, 16)
-        .frame(width: 440)
+        .frame(width: Self.width)
         .onChange(of: caller) {
             // The department this caller's calls usually concern, until one is picked.
             guard !departmentPicked else { return }
@@ -276,25 +302,29 @@ struct CallPanelView: View {
                 ForEach(departments, id: \.self) { Text($0).tag($0) }
             }
             .labelsHidden()
-            .fixedSize()
         }
     }
 
-    /// One-click names; the one already chosen is highlighted.
-    @ViewBuilder
+    /// One row of one-click names; the one already chosen is highlighted. The row is always
+    /// there and never wraps (long names are shortened), so the form keeps its height.
     private func nameButtons(_ names: [String], selection: Binding<String>) -> some View {
-        if !names.isEmpty {
-            FlowLayout(spacing: 6) {
-                ForEach(names, id: \.self) { name in
-                    let isSelected = CallNames.same(name, CallNames.trimmed(selection.wrappedValue))
-                    Button(name) { selection.wrappedValue = name }
-                        .buttonStyle(.bordered)
-                        .controlSize(.small)
-                        .tint(isSelected ? .accentColor : nil)
-                        .accessibilityAddTraits(isSelected ? .isSelected : [])
+        HStack(spacing: 6) {
+            ForEach(names.prefix(3), id: \.self) { name in
+                let isSelected = CallNames.same(name, CallNames.trimmed(selection.wrappedValue))
+                Button { selection.wrappedValue = name } label: {
+                    Text(name)
+                        .lineLimit(1)
+                        .truncationMode(.tail)
                 }
+                .buttonStyle(.bordered)
+                .controlSize(.small)
+                .tint(isSelected ? .accentColor : nil)
+                .help(name)
+                .accessibilityLabel(name)
+                .accessibilityAddTraits(isSelected ? .isSelected : [])
             }
         }
+        .frame(width: fieldWidth, height: 22, alignment: .leading)
     }
 
     private func log(_ length: CallLength) {

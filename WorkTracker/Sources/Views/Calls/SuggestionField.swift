@@ -37,6 +37,13 @@ struct SuggestionField: NSViewRepresentable {
         return comboBox
     }
 
+    /// The offered width, not the text's: a combo box grows with its text, and a long name
+    /// widened the whole call panel.
+    func sizeThatFits(_ proposal: ProposedViewSize, nsView: NSComboBox, context: Context) -> CGSize? {
+        let width = proposal.width.flatMap { $0.isFinite ? $0 : nil } ?? 220
+        return CGSize(width: width, height: nsView.intrinsicContentSize.height)
+    }
+
     func updateNSView(_ comboBox: NSComboBox, context: Context) {
         let coordinator = context.coordinator
         coordinator.parent = self

@@ -145,7 +145,7 @@ struct CallSuggestions {
         let rows = calls.map { (caller: $0.caller, topic: $0.topic, department: $0.department, at: $0.date) }
         self.calls = rows
         callers = CallNames.ranked(rows.map { ($0.caller, $0.at) })
-        recentCallers = CallNames.recent(rows.map { ($0.caller, $0.at) }, limit: 5)
+        recentCallers = CallNames.recent(rows.map { ($0.caller, $0.at) }, limit: 3)
         topics = CallNames.ranked(rows.map { ($0.topic, $0.at) })
     }
 
