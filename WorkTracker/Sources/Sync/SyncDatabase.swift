@@ -6,11 +6,12 @@ import SwiftData
 /// for preferences.
 @MainActor
 enum SyncDatabase {
-    /// Preferences that sync, because balances depend on them. Language, export format,
-    /// backups, the calendar and the daily quote stay per Mac.
+    /// Preferences that sync, because balances depend on them, and the departments calls
+    /// are logged for. Language, export format, backups, the calendar, the daily quote and
+    /// whether calls are tracked stay per Mac.
     enum Setting: String, CaseIterable {
         case trackingStartDate, vacationEntitlement, carryOverVacation, openingVacationCarryOver,
-             openingBalanceHours, fullTimeWeeklyHours, schedule
+             openingBalanceHours, fullTimeWeeklyHours, schedule, callDepartments
 
         static let prefix = "setting."
         var id: String { Self.prefix + rawValue }
@@ -24,6 +25,7 @@ enum SyncDatabase {
             case .openingBalanceHours: return .number(preferences.openingBalanceHours)
             case .fullTimeWeeklyHours: return .number(preferences.fullTimeWeeklyHours)
             case .schedule: return .schedule(preferences.schedule)
+            case .callDepartments: return .names(preferences.callDepartments)
             }
         }
 
@@ -32,7 +34,7 @@ enum SyncDatabase {
             switch (self, value) {
             case (.trackingStartDate, .date), (.carryOverVacation, .flag), (.schedule, .schedule),
                  (.vacationEntitlement, .number), (.openingVacationCarryOver, .number),
-                 (.openingBalanceHours, .number), (.fullTimeWeeklyHours, .number):
+                 (.openingBalanceHours, .number), (.fullTimeWeeklyHours, .number), (.callDepartments, .names):
                 return true
             default:
                 return false
@@ -50,13 +52,14 @@ enum SyncDatabase {
             case (.openingBalanceHours, .number(let number)): preferences.openingBalanceHours = number
             case (.fullTimeWeeklyHours, .number(let number)): preferences.fullTimeWeeklyHours = number
             case (.schedule, .schedule(let schedule)): preferences.schedule = schedule
+            case (.callDepartments, .names(let names)): preferences.callDepartments = names
             default: break
             }
         }
     }
 
     /// Records this version can't store as they are, because a newer version wrote them
-    /// (an absence type or preference it doesn't know). Sync leaves them alone: they
+    /// (an absence type, call length or preference it doesn't know). Sync leaves them alone: they
     /// aren't written into the database, and the database lacking them isn't a change.
     nonisolated static func foreignRecords(in state: SyncState) -> Set<String> {
         Set(state.records.values.filter { !canStore($0) }.map(\.id))
@@ -70,6 +73,8 @@ enum SyncDatabase {
             return setting.accepts(value)
         case .absence(let data):
             return UUID(uuidString: record.id) != nil && (data.type.map { AbsenceType(rawValue: $0) != nil } ?? true)
+        case .call(let data):
+            return UUID(uuidString: record.id) != nil && CallLength(rawValue: data.length) != nil
         case .project, .entry, .category:
             return UUID(uuidString: record.id) != nil
         }
@@ -94,6 +99,7 @@ enum SyncDatabase {
         for project in try context.fetch(FetchDescriptor<Project>(sortBy: [SortDescriptor(\.createdAt)])) { check(&project.syncID) }
         for segment in try context.fetch(FetchDescriptor<WorkSegment>(sortBy: [SortDescriptor(\.startTime)])) { check(&segment.syncID) }
         for absence in try context.fetch(FetchDescriptor<VacationDay>(sortBy: [SortDescriptor(\.date)])) { check(&absence.syncID) }
+        for call in try context.fetch(FetchDescriptor<PhoneCall>(sortBy: [SortDescriptor(\.date)])) { check(&call.syncID) }
         return changed
     }
 
@@ -123,6 +129,12 @@ enum SyncDatabase {
                                                                        color: category.colorRaw, rule: category.ruleRaw,
                                                                        isArchived: category.isArchived))
         }
+        for call in try context.fetch(FetchDescriptor<PhoneCall>()) {
+            guard let id = call.syncID else { continue }
+            records[id.uuidString] = .call(CallRecord(date: call.date, length: call.lengthRaw, caller: call.caller,
+                                                      topic: call.topic, department: call.department, note: call.note,
+                                                      solvedByMe: call.solvedByMe))
+        }
         return records
     }
 
@@ -132,6 +144,7 @@ enum SyncDatabase {
             || context.fetchCount(FetchDescriptor<WorkSegment>()) > 0
             || context.fetchCount(FetchDescriptor<VacationDay>()) > 0
             || context.fetchCount(FetchDescriptor<AbsenceCategory>()) > 0
+            || context.fetchCount(FetchDescriptor<PhoneCall>()) > 0
     }
 
     /// Write `changes` into the context and preferences (without saving). Projects and
@@ -143,6 +156,7 @@ enum SyncDatabase {
         var categories = index(try context.fetch(FetchDescriptor<AbsenceCategory>()), by: { $0.id })
         var segments = index(try context.fetch(FetchDescriptor<WorkSegment>()), by: \.syncID)
         var absences = index(try context.fetch(FetchDescriptor<VacationDay>()), by: \.syncID)
+        var calls = index(try context.fetch(FetchDescriptor<PhoneCall>()), by: \.syncID)
 
         // Categories and projects first, so entries and absences can point at new ones.
         let order = Dictionary(uniqueKeysWithValues: SyncKind.allCases.enumerated().map { ($1, $0) })
@@ -209,13 +223,30 @@ enum SyncDatabase {
                 absence.type = data.type.flatMap(AbsenceType.init(rawValue:))
                 absence.category = data.category.flatMap { categories[$0] }
                 absence.categoryRuleRaw = data.categoryRule
+            case .call(let data):
+                guard let id = UUID(uuidString: record.id), let length = CallLength(rawValue: data.length) else { continue }
+                let call = calls[record.id] ?? {
+                    let call = PhoneCall(date: data.date, length: length, caller: data.caller)
+                    call.syncID = id
+                    context.insert(call)
+                    calls[record.id] = call
+                    return call
+                }()
+                call.date = data.date
+                call.length = length
+                call.caller = data.caller
+                call.topic = data.topic
+                call.department = data.department
+                call.note = data.note
+                call.solvedByMe = data.solvedByMe
             }
         }
 
         // Entries and absences before the projects and categories they may use.
-        for deletion in changes.deletions where deletion.kind == .entry || deletion.kind == .absence {
+        for deletion in changes.deletions where [.entry, .absence, .call].contains(deletion.kind) {
             if let segment = segments.removeValue(forKey: deletion.id) { context.delete(segment) }
             if let absence = absences.removeValue(forKey: deletion.id) { context.delete(absence) }
+            if let call = calls.removeValue(forKey: deletion.id) { context.delete(call) }
         }
         let usedProjects = Set(segments.values.compactMap { $0.project?.persistentModelID })
         let usedCategories = Set(absences.values.compactMap { $0.category?.id })

@@ -15,7 +15,8 @@ final class MCPHandler {
         another. Expected hours come from the work schedule, Zurich public holidays and \
         absences; balance = worked − expected, so a positive balance is overtime. Hours are \
         decimal (7.5 = 7h 30m). Call get_overview first for today's date, balances and the \
-        timer. Changes save immediately and sync to the user's other Macs, and they can't be \
+        timer. The user may also log calls (who called, topic, department, a length block and \
+        who solved the issue); they don't count as working time. Changes save immediately and sync to the user's other Macs, and they can't be \
         undone in the app, so check with the user before deleting or replacing data.
         """
 

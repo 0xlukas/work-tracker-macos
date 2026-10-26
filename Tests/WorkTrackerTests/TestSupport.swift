@@ -25,7 +25,7 @@ func temporaryDirectory(_ test: XCTestCase) throws -> URL {
 
 @MainActor
 func inMemoryContainer() throws -> ModelContainer {
-    try ModelContainer(for: Schema(versionedSchema: WorkTrackerSchemaV5.self),
+    try ModelContainer(for: Schema(versionedSchema: WorkTrackerSchemaV6.self),
                        configurations: ModelConfiguration(isStoredInMemoryOnly: true))
 }
 

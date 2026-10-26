@@ -6,6 +6,7 @@ enum NavigationItem: String, CaseIterable, Identifiable {
     case projects = "Projects"
     case absences = "Absences"
     case overview = "Overview"
+    case calls = "Calls"
 
     var id: String { rawValue }
 
@@ -15,6 +16,7 @@ enum NavigationItem: String, CaseIterable, Identifiable {
         case .projects: return "folder"
         case .absences: return "calendar.badge.minus"
         case .overview: return "chart.bar"
+        case .calls: return "phone"
         }
     }
 }
@@ -28,12 +30,17 @@ struct ContentView: View {
     @State private var showDailyQuote = false
     @State private var showSyncQuestion = false
 
+    /// Calls only appear when they're tracked on this Mac.
+    private var sidebarItems: [NavigationItem] {
+        NavigationItem.allCases.filter { $0 != .calls || preferences.callTrackingEnabled }
+    }
+
     var body: some View {
         ZStack {
             NavigationSplitView {
                 // The system sidebar extends to the window edge and takes on the
                 // macOS 27 glass treatment on its own; keep it a plain List of Labels.
-                List(NavigationItem.allCases, selection: $selection) { item in
+                List(sidebarItems, selection: $selection) { item in
                     if item == .dailyEntry {
                         // Count of past working days with nothing logged, like an unread count.
                         MissingEntriesReader(trackingStart: preferences.trackingStartDate) { missing in
@@ -58,6 +65,8 @@ struct ContentView: View {
                     AbsencesView()
                 case .overview:
                     OverviewView()
+                case .calls:
+                    CallsView()
                 case nil:
                     ContentUnavailableView(tr("Select an item from the sidebar"), systemImage: "sidebar.left")
                 }
@@ -84,6 +93,9 @@ struct ContentView: View {
         }
         .onChange(of: undoManager) { _, manager in
             modelContext.undoManager = manager
+        }
+        .onChange(of: preferences.callTrackingEnabled) { _, enabled in
+            if !enabled && selection == .calls { selection = .dailyEntry }
         }
         // Sync waits for a decision; also shown in Settings ▸ Sync.
         .onChange(of: deviceSync.question, initial: true) { _, question in

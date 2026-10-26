@@ -81,9 +81,11 @@ private struct MenuBarToday: View {
     @Environment(Preferences.self) private var preferences
     @Environment(WorkTimer.self) private var timer
     @Environment(DeviceSync.self) private var deviceSync
+    @Environment(CallControl.self) private var callControl
     @Query(sort: \VacationDay.date) private var absences: [VacationDay]
     @Query(filter: #Predicate<Project> { !$0.isArchived }, sort: \Project.name) private var projects: [Project]
     @Query private var weekSegments: [WorkSegment]
+    @Query private var todaysCalls: [PhoneCall]
     @State private var selectedProject: Project?
 
     let today: Date
@@ -92,6 +94,7 @@ private struct MenuBarToday: View {
         self.today = today
         let start = today.startOfWeekZurich, end = start.addingDays(7)
         _weekSegments = Query(filter: #Predicate<WorkSegment> { $0.date >= start && $0.date < end })
+        _todaysCalls = Query(PhoneCall.descriptor(from: today, through: today))
     }
 
     var body: some View {
@@ -167,6 +170,11 @@ private struct MenuBarToday: View {
 
             Divider()
 
+            if preferences.callTrackingEnabled {
+                callSection
+                Divider()
+            }
+
             if let question = deviceSync.question {
                 // The app may run from the menu bar for days; the question is in the window.
                 Label(tr("%@ — open Work Tracker to decide.", question.title), systemImage: "exclamationmark.triangle.fill")
@@ -189,6 +197,26 @@ private struct MenuBarToday: View {
             if selectedProject == nil {
                 selectedProject = EntryActions.lastUsedProject(in: modelContext) ?? projects.first
             }
+        }
+    }
+
+    /// Today's calls and the button that logs one.
+    private var callSection: some View {
+        let total = CallReport.total(todaysCalls)
+        return HStack(alignment: .firstTextBaseline) {
+            VStack(alignment: .leading, spacing: 2) {
+                Text(tr("Calls Today")).font(.caption).foregroundStyle(.secondary)
+                Text(total.count == 0 ? tr("None yet") : tr("%lld calls", total.count))
+                    .font(.headline)
+            }
+            Spacer()
+            Button {
+                callControl.open()
+            } label: {
+                Label(tr("Log Call"), systemImage: "phone.badge.plus")
+            }
+            .buttonStyle(.glass)
+            .help(preferences.callShortcut == .none ? tr("Log a call") : tr("Log a call (%@ in any app)", preferences.callShortcut.title))
         }
     }
 }

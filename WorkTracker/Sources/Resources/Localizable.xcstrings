@@ -21,6 +21,16 @@
         }
       }
     },
+    "%@ (⌘%lld)": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ (⌘%lld)"
+          }
+        }
+      }
+    },
     "%@ / %@ days": {
       "localizations": {
         "de": {
@@ -157,6 +167,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@: %@ dieses Jahr"
+          }
+        }
+      }
+    },
+    "%lld calls": {
+      "localizations": {
+        "de": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld Anruf"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld Anrufe"
+                }
+              }
+            }
+          }
+        },
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld call"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld calls"
+                }
+              }
+            }
           }
         }
       }
@@ -531,12 +581,62 @@
         }
       }
     },
+    "15 minutes to 1 hour": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "15 Minuten bis 1 Stunde"
+          }
+        }
+      }
+    },
+    "< 1 h": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "< 1 Std."
+          }
+        }
+      }
+    },
+    "< 15 min": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "< 15 Min."
+          }
+        }
+      }
+    },
+    "> 1 h": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "> 1 Std."
+          }
+        }
+      }
+    },
     "A category with this name already exists.": {
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Eine Kategorie mit diesem Namen existiert bereits."
+          }
+        }
+      }
+    },
+    "A department with this name already exists.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eine Abteilung mit diesem Namen gibt es bereits."
           }
         }
       }
@@ -681,6 +781,26 @@
         }
       }
     },
+    "Add department": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abteilung hinzufügen"
+          }
+        }
+      }
+    },
+    "Add departments in Settings…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abteilungen in den Einstellungen hinzufügen …"
+          }
+        }
+      }
+    },
     "Add new project...": {
       "localizations": {
         "de": {
@@ -777,6 +897,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Die Sync-Datei eines anderen Macs kann noch nicht gelesen werden (%@). Versuchen Sie es gleich nochmals; wenn es weiterhin nicht geht, entfernen Sie diese Datei aus dem Sync-Ordner."
+          }
+        }
+      }
+    },
+    "Another app already uses %@. Pick another shortcut.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eine andere App verwendet %@ bereits. Wählen Sie ein anderes Tastenkürzel."
           }
         }
       }
@@ -971,6 +1101,36 @@
         }
       }
     },
+    "By Caller": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nach Anrufer"
+          }
+        }
+      }
+    },
+    "By Department": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nach Abteilung"
+          }
+        }
+      }
+    },
+    "By Topic": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nach Thema"
+          }
+        }
+      }
+    },
     "CSV format": {
       "localizations": {
         "de": {
@@ -987,6 +1147,56 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kalender"
+          }
+        }
+      }
+    },
+    "Call Length": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anrufdauer"
+          }
+        }
+      }
+    },
+    "Caller": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anrufer"
+          }
+        }
+      }
+    },
+    "Calls": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anrufe"
+          }
+        }
+      }
+    },
+    "Calls Today": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anrufe heute"
+          }
+        }
+      }
+    },
+    "Calls: %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anrufe: %@"
           }
         }
       }
@@ -1161,6 +1371,16 @@
         }
       }
     },
+    "Clicking the length saves the call.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ein Klick auf die Dauer speichert den Anruf."
+          }
+        }
+      }
+    },
     "Codex": {
       "localizations": {
         "de": {
@@ -1217,6 +1437,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kopiert"
+          }
+        }
+      }
+    },
+    "Copied %lld calls. Paste them into an AI chat and ask away.": {
+      "localizations": {
+        "de": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld Anruf kopiert. Fügen Sie ihn in einen KI-Chat ein und stellen Sie Ihre Fragen."
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld Anrufe kopiert. Fügen Sie sie in einen KI-Chat ein und stellen Sie Ihre Fragen."
+                }
+              }
+            }
+          }
+        },
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "Copied %lld call. Paste it into an AI chat and ask away."
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "Copied %lld calls. Paste them into an AI chat and ask away."
+                }
+              }
+            }
           }
         }
       }
@@ -1417,6 +1677,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Einstellungen kopieren"
+          }
+        }
+      }
+    },
+    "Copy for AI Chat": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Für KI-Chat kopieren"
+          }
+        }
+      }
+    },
+    "Copy or save the calls shown, e.g. to ask an AI about them": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die angezeigten Anrufe kopieren oder sichern, etwa um eine KI dazu zu befragen"
           }
         }
       }
@@ -1741,6 +2021,36 @@
         }
       }
     },
+    "Department": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abteilung"
+          }
+        }
+      }
+    },
+    "Departments": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abteilungen"
+          }
+        }
+      }
+    },
+    "Did you solve the issue yourself?": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haben Sie das Anliegen selbst gelöst?"
+          }
+        }
+      }
+    },
     "Didn’t hear anything.": {
       "localizations": {
         "de": {
@@ -1831,12 +2141,32 @@
         }
       }
     },
+    "Each call was logged by the person who was called. Length is one of three blocks: under 15 minutes, 15 minutes to 1 hour, or over 1 hour; calls weren’t timed more exactly. “Solved by” says whether the person called (“Me”) or the caller (“Caller”) solved the issue.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jeder Anruf wurde von der angerufenen Person erfasst. Die Dauer ist eine von drei Stufen: unter 15 Minuten, 15 Minuten bis 1 Stunde oder über 1 Stunde; genauer wurden die Anrufe nicht gemessen. «Gelöst von» sagt, ob die angerufene Person («mir») oder der Anrufer («Anrufer») das Anliegen gelöst hat."
+          }
+        }
+      }
+    },
     "Edit": {
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Bearbeiten"
+          }
+        }
+      }
+    },
+    "Edit Call": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anruf bearbeiten"
           }
         }
       }
@@ -1931,6 +2261,16 @@
         }
       }
     },
+    "Enter who called, then click how long it took.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geben Sie ein, wer angerufen hat, und klicken Sie dann auf die Dauer."
+          }
+        }
+      }
+    },
     "Excel with German regional settings expects semicolons and decimal commas.": {
       "localizations": {
         "de": {
@@ -2007,6 +2347,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "CSV exportieren"
+          }
+        }
+      }
+    },
+    "Export Calls": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anrufe exportieren"
           }
         }
       }
@@ -2201,6 +2551,26 @@
         }
       }
     },
+    "How long was the call?": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wie lange dauerte der Anruf?"
+          }
+        }
+      }
+    },
+    "How long?": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wie lange?"
+          }
+        }
+      }
+    },
     "Icon": {
       "localizations": {
         "de": {
@@ -2227,6 +2597,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Anfangspensum"
+          }
+        }
+      }
+    },
+    "Jump to the current period (⌘T)": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zum aktuellen Zeitraum springen (⌘T)"
           }
         }
       }
@@ -2267,6 +2647,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Schlüssel"
+          }
+        }
+      }
+    },
+    "Keyboard shortcut": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tastenkürzel"
           }
         }
       }
@@ -2341,6 +2731,16 @@
         }
       }
     },
+    "Leave empty for the department of the caller’s last call.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leer lassen für die Abteilung vom letzten Anruf dieses Anrufers."
+          }
+        }
+      }
+    },
     "Leave empty for the last-used project.": {
       "localizations": {
         "de": {
@@ -2357,6 +2757,36 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sollstunden unverändert lassen"
+          }
+        }
+      }
+    },
+    "Length": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dauer"
+          }
+        }
+      }
+    },
+    "Less than 15 minutes": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weniger als 15 Minuten"
+          }
+        }
+      }
+    },
+    "Less than an hour": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weniger als eine Stunde"
           }
         }
       }
@@ -2391,12 +2821,102 @@
         }
       }
     },
+    "Log Call": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anruf erfassen"
+          }
+        }
+      }
+    },
+    "Log Earlier Call": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Früheren Anruf erfassen"
+          }
+        }
+      }
+    },
+    "Log Earlier Call…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Früheren Anruf erfassen …"
+          }
+        }
+      }
+    },
     "Log Work": {
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Arbeit erfassen"
+          }
+        }
+      }
+    },
+    "Log a Call": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anruf erfassen"
+          }
+        }
+      }
+    },
+    "Log a call": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einen Anruf erfassen"
+          }
+        }
+      }
+    },
+    "Log a call (%@ in any app)": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einen Anruf erfassen (%@ in jeder App)"
+          }
+        }
+      }
+    },
+    "Log a call (⌘N)": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einen Anruf erfassen (⌘N)"
+          }
+        }
+      }
+    },
+    "Log a call from ${caller} about ${topic}, ${length}": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anruf von ${caller} zu ${topic} erfassen, ${length}"
+          }
+        }
+      }
+    },
+    "Log a call with Log Call or from the menu bar.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erfassen Sie Anrufe mit «Anruf erfassen» oder über die Menüleiste."
           }
         }
       }
@@ -2411,12 +2931,62 @@
         }
       }
     },
+    "Log who called, what about, which department it concerned, roughly how long it took and who solved the issue. The shortcut opens a small panel in any app; clicking the call’s length saves it. Calls don’t change your hours. Turning this off hides calls on this Mac and keeps them.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Halten Sie fest, wer angerufen hat, worum es ging, welche Abteilung betroffen war, wie lange es ungefähr dauerte und wer das Anliegen gelöst hat. Das Tastenkürzel öffnet in jeder App ein kleines Fenster; ein Klick auf die Dauer speichert den Anruf. Anrufe ändern Ihre Stunden nicht. Ausgeschaltet werden die Anrufe auf diesem Mac ausgeblendet und bleiben erhalten."
+          }
+        }
+      }
+    },
     "Logged %@ on %@ (%@–%@).": {
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "%@ auf %@ erfasst (%@–%@)."
+          }
+        }
+      }
+    },
+    "Logged the call from %@ (%@, %@).": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anruf von %@ erfasst (%@, %@)."
+          }
+        }
+      }
+    },
+    "Logged the call from %@ about %@ (%@, %@).": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anruf von %@ zu %@ erfasst (%@, %@)."
+          }
+        }
+      }
+    },
+    "Logs a call: who called, what about, roughly how long it took and who solved the issue.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erfasst einen Anruf: wer angerufen hat, worum es ging, wie lange er ungefähr dauerte und wer das Anliegen gelöst hat."
+          }
+        }
+      }
+    },
+    "Long": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lang"
           }
         }
       }
@@ -2437,6 +3007,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kategorien verwalten…"
+          }
+        }
+      }
+    },
+    "Me": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mir"
           }
         }
       }
@@ -2487,6 +3067,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Weitere Aktionen"
+          }
+        }
+      }
+    },
+    "More than an hour": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mehr als eine Stunde"
           }
         }
       }
@@ -2561,6 +3151,26 @@
         }
       }
     },
+    "New department": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neue Abteilung"
+          }
+        }
+      }
+    },
+    "Next": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weiter"
+          }
+        }
+      }
+    },
     "Next Day": {
       "localizations": {
         "de": {
@@ -2581,6 +3191,16 @@
         }
       }
     },
+    "Next period (⌘])": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nächster Zeitraum (⌘])"
+          }
+        }
+      }
+    },
     "No backups yet.": {
       "localizations": {
         "de": {
@@ -2591,12 +3211,42 @@
         }
       }
     },
+    "No calls": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Anrufe"
+          }
+        }
+      }
+    },
+    "No calls in this period": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Anrufe in diesem Zeitraum"
+          }
+        }
+      }
+    },
     "No custom categories yet.": {
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Noch keine eigenen Kategorien."
+          }
+        }
+      }
+    },
+    "No department": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Abteilung"
           }
         }
       }
@@ -2671,12 +3321,42 @@
         }
       }
     },
+    "No topic": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kein Thema"
+          }
+        }
+      }
+    },
     "No work logged in this period": {
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "In diesem Zeitraum keine Arbeit erfasst"
+          }
+        }
+      }
+    },
+    "None": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine"
+          }
+        }
+      }
+    },
+    "None yet": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch keine"
           }
         }
       }
@@ -2751,6 +3431,16 @@
         }
       }
     },
+    "Opens this panel from any app": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Öffnet dieses Fenster in jeder App"
+          }
+        }
+      }
+    },
     "Optional": {
       "localizations": {
         "de": {
@@ -2797,6 +3487,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Andere Abwesenheit"
+          }
+        }
+      }
+    },
+    "Over 1 hour": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Über 1 Stunde"
           }
         }
       }
@@ -2861,6 +3561,16 @@
         }
       }
     },
+    "Period": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeitraum"
+          }
+        }
+      }
+    },
     "Pink": {
       "localizations": {
         "de": {
@@ -2877,6 +3587,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Port %@ wird von einer anderen App verwendet."
+          }
+        }
+      }
+    },
+    "Press %@ in any app to log a call, or use Log Call.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drücken Sie %@ in einer beliebigen App, um einen Anruf zu erfassen, oder verwenden Sie «Anruf erfassen»."
           }
         }
       }
@@ -2901,6 +3621,16 @@
         }
       }
     },
+    "Previous": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zurück"
+          }
+        }
+      }
+    },
     "Previous Day": {
       "localizations": {
         "de": {
@@ -2917,6 +3647,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vorheriger Tag (⌘[)"
+          }
+        }
+      }
+    },
+    "Previous period (⌘[)": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vorheriger Zeitraum (⌘[)"
           }
         }
       }
@@ -3021,6 +3761,26 @@
         }
       }
     },
+    "Remove": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entfernen"
+          }
+        }
+      }
+    },
+    "Remove %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ entfernen"
+          }
+        }
+      }
+    },
     "Remove this schedule change": {
       "localizations": {
         "de": {
@@ -3041,12 +3801,42 @@
         }
       }
     },
+    "Rename %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ umbenennen"
+          }
+        }
+      }
+    },
     "Rename project": {
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Projekt umbenennen"
+          }
+        }
+      }
+    },
+    "Renames “%@” in every call. A name that’s already used combines the two.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Benennt «%@» in allen Anrufen um. Ein bereits verwendeter Name führt die beiden zusammen."
+          }
+        }
+      }
+    },
+    "Rename…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Umbenennen …"
           }
         }
       }
@@ -3251,6 +4041,26 @@
         }
       }
     },
+    "Save as CSV…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als CSV sichern …"
+          }
+        }
+      }
+    },
+    "Save as Markdown…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als Markdown sichern …"
+          }
+        }
+      }
+    },
     "Saved %@ on %@.": {
       "localizations": {
         "de": {
@@ -3331,6 +4141,26 @@
         }
       }
     },
+    "Short": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kurz"
+          }
+        }
+      }
+    },
+    "Show All Calls": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle Anrufe zeigen"
+          }
+        }
+      }
+    },
     "Show Backups": {
       "localizations": {
         "de": {
@@ -3351,6 +4181,16 @@
         }
       }
     },
+    "Show Only These Calls": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nur diese Anrufe zeigen"
+          }
+        }
+      }
+    },
     "Show Sync Folder": {
       "localizations": {
         "de": {
@@ -3367,6 +4207,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Abwesenheiten im Kalender anzeigen"
+          }
+        }
+      }
+    },
+    "Show all calls": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle Anrufe zeigen"
           }
         }
       }
@@ -3397,6 +4247,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "Krank"
+          }
+        }
+      }
+    },
+    "Solved by": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelöst von"
+          }
+        }
+      }
+    },
+    "Solved by me": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Von mir gelöst"
+          }
+        }
+      }
+    },
+    "Solved by me: %@ of %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Von mir gelöst: %@ von %@"
+          }
+        }
+      }
+    },
+    "Solved by the caller": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vom Anrufer gelöst"
           }
         }
       }
@@ -3751,6 +4641,16 @@
         }
       }
     },
+    "The choices of the call panel’s Department menu; drag to reorder. Removing one keeps it on earlier calls; renaming one renames it in every call. Your Macs share this list.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Auswahl im Menü «Abteilung» des Anruffensters; zum Umsortieren ziehen. Eine entfernte Abteilung bleibt bei früheren Anrufen stehen; eine umbenannte heisst in allen Anrufen neu. Ihre Macs teilen diese Liste."
+          }
+        }
+      }
+    },
     "The current database is moved into the Backups folder, not deleted.": {
       "localizations": {
         "de": {
@@ -3951,6 +4851,26 @@
         }
       }
     },
+    "Tick when you solved the issue; leave it unticked when the caller solved it.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ankreuzen, wenn Sie das Anliegen gelöst haben; leer lassen, wenn der Anrufer es gelöst hat."
+          }
+        }
+      }
+    },
+    "Time": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uhrzeit"
+          }
+        }
+      }
+    },
     "Time Entries…": {
       "localizations": {
         "de": {
@@ -4001,12 +4921,42 @@
         }
       }
     },
+    "Topic": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thema"
+          }
+        }
+      }
+    },
     "Total": {
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Total"
+          }
+        }
+      }
+    },
+    "Totals": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Summen"
+          }
+        }
+      }
+    },
+    "Track calls": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anrufe protokollieren"
           }
         }
       }
@@ -4061,6 +5011,16 @@
         }
       }
     },
+    "Turn on Track calls in Work Tracker’s settings first.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schalten Sie zuerst «Anrufe protokollieren» in den Einstellungen von Work Tracker ein."
+          }
+        }
+      }
+    },
     "Type to search…": {
       "localizations": {
         "de": {
@@ -4071,12 +5031,42 @@
         }
       }
     },
+    "Under 15 minutes": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unter 15 Minuten"
+          }
+        }
+      }
+    },
+    "Under an hour": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unter einer Stunde"
+          }
+        }
+      }
+    },
     "Understanding…": {
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Wird verarbeitet …"
+          }
+        }
+      }
+    },
+    "Unknown": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unbekannt"
           }
         }
       }
@@ -4221,6 +5211,16 @@
         }
       }
     },
+    "Week": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Woche"
+          }
+        }
+      }
+    },
     "Weekday": {
       "localizations": {
         "de": {
@@ -4237,6 +5237,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wochenende"
+          }
+        }
+      }
+    },
+    "What about?": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Worum ging es?"
+          }
+        }
+      }
+    },
+    "What was the call about?": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Worum ging es im Anruf?"
+          }
+        }
+      }
+    },
+    "When": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wann"
+          }
+        }
+      }
+    },
+    "Who called?": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wer hat angerufen?"
           }
         }
       }
@@ -4561,6 +5601,16 @@
         }
       }
     },
+    "of %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "von %@"
+          }
+        }
+      }
+    },
     "of %@ expected": {
       "localizations": {
         "de": {
@@ -4577,6 +5627,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Überstunden"
+          }
+        }
+      }
+    },
+    "solved by the caller": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "vom Anrufer gelöst"
+          }
+        }
+      }
+    },
+    "solved by you": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "von Ihnen gelöst"
           }
         }
       }

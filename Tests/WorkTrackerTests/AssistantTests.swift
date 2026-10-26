@@ -343,6 +343,50 @@ final class AssistantToolTests: XCTestCase {
         }
         XCTAssertEqual(Set(AssistantTools.definitions.map(\.name)).count, AssistantTools.definitions.count)
     }
+
+    func testCalls() throws {
+        let app = try Assistant()
+        app.preferences.callDepartments = ["Credit", "Operations"]
+        let logged = try app.call("log_call", ["caller": "Meier", "topic": "Mortgage", "length": "medium",
+                                               "department": "credit", "solved_by_me": true, "at": "09:30"])
+        XCTAssertEqual(logged["department"] as? String, "Credit")
+        XCTAssertEqual(logged["time"] as? String, "09:30")
+        XCTAssertEqual(logged["solved_by"] as? String, "me")
+        _ = try app.call("log_call", ["caller": "meier", "length": "short"])
+        XCTAssertEqual(app.failure("log_call", ["caller": "Huber", "length": "forever"]),
+                       "'length' must be short (under 15 minutes), medium (15 minutes to 1 hour) or long (over 1 hour).")
+        XCTAssertEqual(app.failure("log_call", ["caller": "Huber", "length": "short", "department": "Legal"]),
+                       "There's no department 'Legal'. Departments: Credit, Operations.")
+        XCTAssertNotNil(app.failure("log_call", ["caller": "Huber", "length": "short", "at": "16:00"]), "in the future")
+
+        let list = try app.call("list_calls", ["from": "today"])
+        XCTAssertEqual(list["count"] as? Int, 2)
+        let calls = try XCTUnwrap(list["calls"] as? [[String: Any]])
+        XCTAssertEqual(calls.map { $0["caller"] as? String }, ["Meier", "Meier"], "the spelling used before")
+        XCTAssertTrue(calls[1]["topic"] is NSNull)
+        XCTAssertEqual(calls[1]["solved_by"] as? String, "caller")
+        XCTAssertEqual(try app.call("list_calls", ["from": "today", "topic": "mortgage"])["count"] as? Int, 1)
+
+        let summary = try app.call("get_call_summary", ["from": "2026-10-01", "to": "today"])
+        XCTAssertEqual(summary["calls"] as? Int, 2)
+        XCTAssertEqual(summary["solved_by_me"] as? Int, 1)
+        XCTAssertEqual(summary["departments"] as? [String], ["Credit", "Operations"])
+        let caller = try XCTUnwrap((summary["callers"] as? [[String: Any]])?.first)
+        XCTAssertEqual(caller["caller"] as? String, "Meier")
+        XCTAssertEqual([caller["short"], caller["medium"], caller["long"]].map { $0 as? Int }, [1, 1, 0])
+
+        let id = try XCTUnwrap(calls[1]["id"] as? String)
+        let updated = try XCTUnwrap(app.call("update_call", ["id": id, "topic": "mortgage", "length": "long", "at": "14:00",
+                                                             "department": ""])["after"] as? [String: Any])
+        XCTAssertEqual(updated["topic"] as? String, "Mortgage")
+        XCTAssertEqual(updated["length"] as? String, "long")
+        XCTAssertEqual(updated["time"] as? String, "14:00")
+        XCTAssertTrue(updated["department"] is NSNull)
+
+        XCTAssertEqual((try app.call("delete_calls", ["ids": [id]])["deleted"] as? [[String: Any]])?.count, 1)
+        XCTAssertEqual(try app.call("list_calls", ["from": "today"])["count"] as? Int, 1)
+        XCTAssertEqual(app.failure("delete_calls", ["ids": [id]]), "No call with id \(id). Nothing was deleted.")
+    }
 }
 
 @MainActor

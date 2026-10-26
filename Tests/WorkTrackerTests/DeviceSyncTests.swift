@@ -183,6 +183,27 @@ final class SyncMergeTests: XCTestCase {
         try data.write(to: SyncFolder.fileURL(device: "E", in: folder))
         XCTAssertTrue(SyncFolder.hasChanges(folder, ownDevice: "A", cache: readable.others))
     }
+
+    func testCallsAndDepartmentsRoundTrip() throws {
+        var state = newState()
+        let call = CallRecord(date: base, length: "medium", caller: "Meier", topic: "Mortgage", department: "Credit",
+                              note: "«ä»", solvedByMe: true)
+        SyncMerge.absorb(["k": .call(call), "setting.callDepartments": .setting(.names(["Credit", "Operations"]))],
+                         into: &state, device: "A", now: base)
+        let snapshot = DeviceSnapshot(device: .init(id: "A", name: "Mac", appVersion: "1"), publishedAt: base, state: state)
+        let decoded = try JSONDecoder().decode(DeviceSnapshot.self, from: DeviceSnapshot.encoder().encode(snapshot))
+        XCTAssertEqual(decoded.state, state)
+        XCTAssertEqual(decoded.format, 2, "older Macs wait for the update instead of reading calls half")
+
+        func record(_ length: String) -> SyncRecord {
+            var unknown = call
+            unknown.length = length
+            return SyncRecord(id: UUID().uuidString, version: SyncVersion(time: 1, device: "A"), payload: .call(unknown),
+                              isDeleted: false)
+        }
+        XCTAssertTrue(SyncDatabase.canStore(record("long")))
+        XCTAssertFalse(SyncDatabase.canStore(record("all day")), "a length from a newer version is passed on, not stored")
+    }
 }
 
 private extension SyncState {
@@ -1159,5 +1180,38 @@ final class DeviceSyncTests: XCTestCase {
                                preferences: a.preferences, timer: a.timer)
         XCTAssertFalse(fresh.isEnabled)
         XCTAssertNotNil(fresh.notice)
+    }
+
+    @MainActor
+    func testCallsAndDepartmentsSync() async throws {
+        let a = try mac("A"), b = try mac("B")
+        a.preferences.callDepartments = ["Credit", "Operations"]
+        CallLog.add(caller: "Meier", topic: "Mortgage", department: "Credit", length: .long, solvedByMe: true,
+                    at: time(day(9, 22), 10), context: a.context)
+        try a.context.save()
+        await a.sync.turnOn()
+        await b.sync.turnOn()
+        await syncAll(a, b)
+        let call = try XCTUnwrap(b.context.fetch(FetchDescriptor<PhoneCall>()).first)
+        XCTAssertEqual([call.caller, call.topic, call.department], ["Meier", "Mortgage", "Credit"])
+        XCTAssertEqual(call.length, .long)
+        XCTAssertTrue(call.solvedByMe)
+        XCTAssertEqual(call.date, time(day(9, 22), 10))
+        XCTAssertEqual(b.preferences.callDepartments, ["Credit", "Operations"])
+
+        call.topic = "Limits"
+        call.solvedByMe = false
+        try b.context.save()
+        b.preferences.callDepartments.append("Legal")
+        await syncAll(b, a)
+        let onA = try XCTUnwrap(a.context.fetch(FetchDescriptor<PhoneCall>()).first)
+        XCTAssertEqual(onA.topic, "Limits")
+        XCTAssertFalse(onA.solvedByMe)
+        XCTAssertEqual(a.preferences.callDepartments, ["Credit", "Operations", "Legal"])
+
+        a.context.delete(onA)
+        try a.context.save()
+        await syncAll(a, b)
+        XCTAssertEqual(try b.context.fetchCount(FetchDescriptor<PhoneCall>()), 0)
     }
 }

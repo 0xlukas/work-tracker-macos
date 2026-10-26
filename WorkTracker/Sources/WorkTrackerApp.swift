@@ -27,6 +27,7 @@ struct WorkTrackerApp: App {
     @State private var calendarSync: CalendarSync
     @State private var deviceSync: DeviceSync
     @State private var assistantServer: AssistantServer
+    @State private var callControl: CallControl
     @State private var preferences = Preferences.shared
     @State private var timer = WorkTimer.shared
     private let container: ModelContainer?
@@ -44,6 +45,8 @@ struct WorkTrackerApp: App {
         _deviceSync = State(initialValue: deviceSync)
         let assistantServer = AssistantServer()
         _assistantServer = State(initialValue: assistantServer)
+        let callControl = CallControl()
+        _callControl = State(initialValue: callControl)
         do {
             let container = try ModelContainer.workTracker(url: storeURL)
             if (try? VacationDay.removeDuplicates(in: container.mainContext)) ?? 0 > 0 {
@@ -59,6 +62,7 @@ struct WorkTrackerApp: App {
             }
             assistantServer.start(handler: MCPHandler(tools: AssistantTools(
                 context: container.mainContext, preferences: .shared, timer: .shared, deviceSync: deviceSync)))
+            callControl.start(container: container)
         } catch {
             // Never wipe or recreate the store; offer recovery instead.
             self.container = nil
@@ -77,7 +81,7 @@ struct WorkTrackerApp: App {
                 }
             }
             .appEnvironment(preferences: preferences, backups: backups, timer: timer, calendarSync: calendarSync, deviceSync: deviceSync,
-                            assistantServer: assistantServer)
+                            assistantServer: assistantServer, callControl: callControl)
         }
         .defaultSize(width: 1080, height: 720)
         .windowResizability(.contentSize)
@@ -96,7 +100,7 @@ struct WorkTrackerApp: App {
                 }
             }
             .appEnvironment(preferences: preferences, backups: backups, timer: timer, calendarSync: calendarSync, deviceSync: deviceSync,
-                            assistantServer: assistantServer)
+                            assistantServer: assistantServer, callControl: callControl)
         }
 
         MenuBarExtra(isInserted: .constant(container != nil)) {
@@ -104,7 +108,7 @@ struct WorkTrackerApp: App {
                 MenuBarContent()
                     .modelContainer(container)
                     .appEnvironment(preferences: preferences, backups: backups, timer: timer, calendarSync: calendarSync, deviceSync: deviceSync,
-                                    assistantServer: assistantServer)
+                                    assistantServer: assistantServer, callControl: callControl)
             }
         } label: {
             MenuBarLabel()
@@ -119,10 +123,11 @@ extension View {
     /// times and pickers look the same on every screen and in every window.
     func appEnvironment(preferences: Preferences, backups: BackupManager, timer: WorkTimer,
                         calendarSync: CalendarSync, deviceSync: DeviceSync,
-                        assistantServer: AssistantServer) -> some View {
+                        assistantServer: AssistantServer, callControl: CallControl) -> some View {
         var calendar = Calendar.zurich
         calendar.locale = Localization.locale
         return self
+            .environment(callControl)
             .environment(preferences)
             .environment(backups)
             .environment(timer)

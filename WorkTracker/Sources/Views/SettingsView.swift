@@ -8,6 +8,7 @@ struct SettingsView: View {
         TabView {
             Tab(tr("General"), systemImage: "gearshape") { GeneralSettings() }
             Tab(tr("Work"), systemImage: "briefcase") { WorkSettings() }
+            Tab(tr("Calls"), systemImage: "phone") { CallSettings() }
             Tab(tr("Storage"), systemImage: "externaldrive") { StorageSettings() }
             Tab(tr("Sync"), systemImage: "arrow.triangle.2.circlepath") { SyncSettings() }
             Tab(tr("Assistants"), systemImage: "sparkles") { AssistantSettings() }
@@ -642,6 +643,143 @@ extension DeviceSync.Question {
             return [Option(answer: .keepThem, label: tr("Keep Them"), isDestructive: false),
                     Option(answer: .deleteHereToo, label: tr("Delete Them Here Too"), isDestructive: true)]
         }
+    }
+}
+
+// MARK: - Calls
+
+private struct CallSettings: View {
+    @Environment(\.modelContext) private var modelContext
+    @Environment(Preferences.self) private var preferences
+    @Environment(CallControl.self) private var callControl
+    @State private var newDepartment = ""
+    @State private var editingDepartment: String?
+    @State private var editName = ""
+    @State private var departmentError: String?
+    @FocusState private var renameFocused: Bool
+
+    var body: some View {
+        @Bindable var preferences = preferences
+        Form {
+            Section {
+                Toggle(tr("Track calls"), isOn: $preferences.callTrackingEnabled)
+                if preferences.callTrackingEnabled {
+                    Picker(tr("Keyboard shortcut"), selection: $preferences.callShortcut) {
+                        ForEach(CallShortcut.allCases) { Text($0.title).tag($0) }
+                    }
+                    if callControl.shortcutUnavailable {
+                        Text(tr("Another app already uses %@. Pick another shortcut.", preferences.callShortcut.title))
+                            .font(.caption)
+                            .foregroundStyle(.red)
+                    }
+                }
+            } header: {
+                Text(tr("Calls"))
+            } footer: {
+                Text(tr("Log who called, what about, which department it concerned, roughly how long it took and who solved the issue. The shortcut opens a small panel in any app; clicking the call’s length saves it. Calls don’t change your hours. Turning this off hides calls on this Mac and keeps them."))
+            }
+
+            if preferences.callTrackingEnabled {
+                Section {
+                    ForEach(preferences.callDepartments, id: \.self) { department in
+                        departmentRow(department)
+                    }
+                    .onMove { preferences.callDepartments.move(fromOffsets: $0, toOffset: $1) }
+                    HStack {
+                        TextField(tr("Add department"), text: $newDepartment, prompt: Text(tr("New department")))
+                            .labelsHidden()
+                            .onSubmit(addDepartment)
+                            .onChange(of: newDepartment) { departmentError = nil }
+                        Button(tr("Add"), action: addDepartment)
+                            .disabled(CallNames.trimmed(newDepartment).isEmpty)
+                    }
+                    if let departmentError {
+                        Text(departmentError)
+                            .font(.caption)
+                            .foregroundStyle(.red)
+                    }
+                } header: {
+                    Text(tr("Departments"))
+                } footer: {
+                    Text(tr("The choices of the call panel’s Department menu; drag to reorder. Removing one keeps it on earlier calls; renaming one renames it in every call. Your Macs share this list."))
+                }
+            }
+        }
+        .formStyle(.grouped)
+    }
+
+    @ViewBuilder
+    private func departmentRow(_ department: String) -> some View {
+        if editingDepartment == department {
+            HStack {
+                TextField(tr("Department"), text: $editName)
+                    .labelsHidden()
+                    .textFieldStyle(.roundedBorder)
+                    .focused($renameFocused)
+                    .onSubmit { rename(department) }
+                    .onAppear { renameFocused = true }
+                Button(tr("Save")) { rename(department) }
+                Button(tr("Cancel")) { editingDepartment = nil }
+            }
+        } else {
+            HStack {
+                Text(department)
+                Spacer()
+                Button { startEditing(department) } label: { Image(systemName: "pencil") }
+                    .buttonStyle(.borderless)
+                    .help(tr("Rename"))
+                    .accessibilityLabel(tr("Rename %@", department))
+                Button { preferences.callDepartments.removeAll { $0 == department } } label: {
+                    Image(systemName: "minus.circle")
+                }
+                .buttonStyle(.borderless)
+                .help(tr("Remove"))
+                .accessibilityLabel(tr("Remove %@", department))
+            }
+            .contextMenu {
+                Button(tr("Rename")) { startEditing(department) }
+                Button(tr("Remove"), role: .destructive) { preferences.callDepartments.removeAll { $0 == department } }
+            }
+        }
+    }
+
+    private func isTaken(_ name: String, except: String? = nil) -> Bool {
+        preferences.callDepartments.contains { $0 != except && CallNames.same($0, name) }
+    }
+
+    private func addDepartment() {
+        let name = CallNames.trimmed(newDepartment)
+        guard !name.isEmpty else { return }
+        guard !isTaken(name) else {
+            departmentError = tr("A department with this name already exists.")
+            return
+        }
+        preferences.callDepartments.append(name)
+        newDepartment = ""
+    }
+
+    private func startEditing(_ department: String) {
+        editingDepartment = department
+        editName = department
+        departmentError = nil
+    }
+
+    private func rename(_ department: String) {
+        let name = CallNames.trimmed(editName)
+        guard !name.isEmpty, name != department else {
+            editingDepartment = nil
+            return
+        }
+        guard !isTaken(name, except: department) else {
+            departmentError = tr("A department with this name already exists.")
+            return
+        }
+        if let index = preferences.callDepartments.firstIndex(of: department) {
+            preferences.callDepartments[index] = name
+        }
+        CallLog.rename(department, to: name, field: \.department, context: modelContext)
+        try? modelContext.save()
+        editingDepartment = nil
     }
 }
 

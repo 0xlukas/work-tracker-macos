@@ -205,7 +205,8 @@ enum WorkTrackerSchemaV4: VersionedSchema {
 }
 
 /// V5: a sync ID on projects, entries and absences, so each Mac can tell which rows are
-/// the same (custom categories already had their `id`).
+/// the same (custom categories already had their `id`). Its models still have the live
+/// shapes; freeze copies here before changing one of them.
 enum WorkTrackerSchemaV5: VersionedSchema {
     static var versionIdentifier: Schema.Version { Schema.Version(5, 0, 0) }
     static var models: [any PersistentModel.Type] {
@@ -213,10 +214,18 @@ enum WorkTrackerSchemaV5: VersionedSchema {
     }
 }
 
+/// V6: calls.
+enum WorkTrackerSchemaV6: VersionedSchema {
+    static var versionIdentifier: Schema.Version { Schema.Version(6, 0, 0) }
+    static var models: [any PersistentModel.Type] {
+        WorkTrackerSchemaV5.models + [PhoneCall.self]
+    }
+}
+
 enum WorkTrackerMigrationPlan: SchemaMigrationPlan {
     static var schemas: [any VersionedSchema.Type] {
         [WorkTrackerSchemaV1.self, WorkTrackerSchemaV2.self, WorkTrackerSchemaV3.self, WorkTrackerSchemaV4.self,
-         WorkTrackerSchemaV5.self]
+         WorkTrackerSchemaV5.self, WorkTrackerSchemaV6.self]
     }
 
     static var stages: [MigrationStage] {
@@ -225,7 +234,8 @@ enum WorkTrackerMigrationPlan: SchemaMigrationPlan {
          .custom(fromVersion: WorkTrackerSchemaV3.self, toVersion: WorkTrackerSchemaV4.self,
                  willMigrate: nil, didMigrate: { try finishV4($0) }),
          .custom(fromVersion: WorkTrackerSchemaV4.self, toVersion: WorkTrackerSchemaV5.self,
-                 willMigrate: nil, didMigrate: { try finishV5($0) })]
+                 willMigrate: nil, didMigrate: { try finishV5($0) }),
+         .lightweight(fromVersion: WorkTrackerSchemaV5.self, toVersion: WorkTrackerSchemaV6.self)]
     }
 
     /// Fill in what V4 adds: keep each project's previous (name-derived) colour, move
@@ -263,7 +273,7 @@ enum WorkTrackerMigrationPlan: SchemaMigrationPlan {
 extension ModelContainer {
     /// The app's container for a store at `url`, migrated to the current schema.
     static func workTracker(url: URL) throws -> ModelContainer {
-        try ModelContainer(for: Schema(versionedSchema: WorkTrackerSchemaV5.self),
+        try ModelContainer(for: Schema(versionedSchema: WorkTrackerSchemaV6.self),
                            migrationPlan: WorkTrackerMigrationPlan.self,
                            configurations: ModelConfiguration(url: url))
     }

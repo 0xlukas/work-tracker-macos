@@ -162,6 +162,9 @@ private enum Param {
     static let rule = choice("How the absence counts: reduce_hours (time off without using vacation), vacation_allowance (uses the annual vacation allowance), unchanged (recorded, no time credit).",
                              ["reduce_hours", "vacation_allowance", "unchanged"])
     static let icon = choice("SF Symbol.", AbsenceCategory.iconChoices.map(\.symbol))
+    static let callLength = choice("How long the call took: short (under 15 minutes), medium (15 minutes to 1 hour) or long (over 1 hour).",
+                                   CallLength.allCases.map(\.rawValue))
+    static let department = string("Department, one of the list in get_call_summary's 'departments' (case doesn't matter); empty for none.")
     static let weekHours: [String: Any] = [
         "type": "array", "items": ["type": "number"], "minItems": 7, "maxItems": 7,
         "description": "Hours for Monday … Sunday, e.g. [8.4, 8.4, 8.4, 8.4, 8.4, 0, 0].",
@@ -313,6 +316,40 @@ final class AssistantTools {
                        description: "Stop the timer without saving anything.",
                        effect: .delete),
 
+        // Calls
+        ToolDefinition(name: "list_calls", title: "List calls",
+                       description: "Logged calls in a date range, oldest first: id, date, time, caller, topic, department, length (short < 15 min, medium < 1 h, long > 1 h; calls aren't timed more exactly), solved_by (me = the user, or caller) and note. Calls don't count as working time.",
+                       properties: ["from": Param.day("First day."), "to": Param.day("Last day (inclusive); defaults to 'from'."),
+                                    "caller": Param.string("Only this caller."), "topic": Param.string("Only this topic."),
+                                    "department": Param.string("Only this department."),
+                                    "limit": Param.number("Most calls to return; 300 by default, at most 2000.")],
+                       required: ["from"], effect: .read),
+        ToolDefinition(name: "get_call_summary", title: "Call summary",
+                       description: "Calls in a date range counted per length, per caller, per topic and per department, with how many the user solved. Also lists the departments calls can be logged for.",
+                       properties: ["from": Param.day("First day."), "to": Param.day("Last day (inclusive); defaults to 'from'.")],
+                       required: ["from"], effect: .read),
+        ToolDefinition(name: "log_call", title: "Log a call",
+                       description: "Log a call the user had. Caller and topic names are matched to earlier calls ignoring case.",
+                       properties: ["caller": Param.string("Who called."), "topic": Param.string("What about; optional."),
+                                    "department": Param.department, "length": Param.callLength,
+                                    "solved_by_me": Param.bool("True when the user solved the issue, false when the caller did; false by default."),
+                                    "note": Param.string("Optional note."),
+                                    "at": Param.string("When: HH:MM today or YYYY-MM-DD HH:MM; now by default.")],
+                       required: ["caller", "length"], effect: .write),
+        ToolDefinition(name: "update_call", title: "Change a call",
+                       description: "Change a call's caller, topic, department, length, who solved it, note or time.",
+                       properties: ["id": Param.string("Call id from list_calls."), "caller": Param.string("New caller."),
+                                    "topic": Param.string("New topic; empty to remove it."), "department": Param.department,
+                                    "length": Param.callLength, "solved_by_me": Param.bool("Whether the user solved the issue."),
+                                    "note": Param.string("New note; empty to remove it."),
+                                    "at": Param.string("New time: HH:MM on the call's day or YYYY-MM-DD HH:MM.")],
+                       required: ["id"], effect: .write),
+        ToolDefinition(name: "delete_calls", title: "Delete calls",
+                       description: "Delete calls by id. All ids must exist, or nothing is deleted.",
+                       properties: ["ids": ["type": "array", "items": ["type": "string"], "minItems": 1,
+                                            "description": "Call ids from list_calls."]],
+                       required: ["ids"], effect: .delete),
+
         // Settings
         ToolDefinition(name: "update_settings", title: "Change settings",
                        description: "Change the tracking start, opening balance or vacation settings. They sync to the other Macs and change balances.",
@@ -365,6 +402,11 @@ final class AssistantTools {
         case "start_timer": return try startTimer(arguments)
         case "stop_timer": return try stopTimer(arguments)
         case "discard_timer": return try discardTimer()
+        case "list_calls": return try listCalls(arguments)
+        case "get_call_summary": return try callSummary(arguments)
+        case "log_call": return try logCall(arguments)
+        case "update_call": return try updateCall(arguments)
+        case "delete_calls": return try deleteCalls(arguments)
         case "update_settings": return try updateSettings(arguments)
         case "set_schedule": return try setSchedule(arguments)
         case "remove_schedule_change": return try removeScheduleChange(arguments)
@@ -897,6 +939,115 @@ final class AssistantTools {
         return ["discarded": ["project": nullable(name), "started": ToolFormat.moment(started)] as [String: Any]]
     }
 
+    // MARK: - Calls
+
+    private func listCalls(_ arguments: ToolArguments) throws -> [String: Any] {
+        let (from, to) = try range(arguments, maxDays: 3700)
+        let limitValue = try arguments.number("limit") ?? 300
+        guard (1...2000).contains(limitValue) else { throw ToolError("'limit' must be between 1 and 2000.") }
+        let limit = Int(limitValue)
+        var calls = try context.fetch(PhoneCall.descriptor(from: from, through: to))
+        for (key, field) in [("caller", \PhoneCall.caller), ("topic", \PhoneCall.topic), ("department", \PhoneCall.department)] {
+            if let value = try arguments.optionalString(key) {
+                calls = calls.filter { CallNames.same($0[keyPath: field], value) }
+            }
+        }
+        var result: [String: Any] = [
+            "from": ToolFormat.day(from), "to": ToolFormat.day(to),
+            "count": calls.count,
+            "calls": calls.prefix(limit).map(callInfo),
+        ]
+        if calls.count > limit {
+            result["note"] = "Only the first \(limit) of \(calls.count) calls are listed; narrow the range or raise 'limit'."
+        }
+        return result
+    }
+
+    private func callSummary(_ arguments: ToolArguments) throws -> [String: Any] {
+        let (from, to) = try range(arguments, maxDays: 3700)
+        let calls = try context.fetch(PhoneCall.descriptor(from: from, through: to))
+        func rows(_ groups: [CallGroup], _ key: String) -> [[String: Any]] {
+            groups.map { group in
+                var row = groupInfo(group)
+                row[key] = group.name.isEmpty ? NSNull() : group.name
+                return row
+            }
+        }
+        var result = groupInfo(CallReport.total(calls))
+        result["from"] = ToolFormat.day(from)
+        result["to"] = ToolFormat.day(to)
+        result["lengths"] = "short: under 15 minutes, medium: 15 minutes to 1 hour, long: over 1 hour"
+        result["callers"] = rows(CallReport.byCaller(calls), "caller")
+        result["topics"] = rows(CallReport.byTopic(calls), "topic")
+        result["by_department"] = rows(CallReport.byDepartment(calls), "department")
+        result["departments"] = preferences.callDepartments
+        return result
+    }
+
+    private func logCall(_ arguments: ToolArguments) throws -> [String: Any] {
+        let caller = try arguments.string("caller")
+        guard !caller.isEmpty else { throw ToolError("'caller' can't be empty.") }
+        let length = try parseCallLength(arguments.string("length"))
+        let now = self.now()
+        let at = try arguments.optionalString("at").map { try ToolFormat.parseMoment($0, now: now) } ?? now
+        guard at <= now.addingTimeInterval(60) else { throw ToolError("A call can't be logged in the future.") }
+        let department = try arguments.optionalString("department").map(parseDepartment) ?? ""
+        var call: PhoneCall?
+        try save {
+            call = CallLog.add(caller: caller, topic: try arguments.optionalString("topic") ?? "", department: department,
+                               note: try arguments.optionalString("note") ?? "", length: length,
+                               solvedByMe: try arguments.bool("solved_by_me") ?? false, at: at, context: context)
+        }
+        return call.map(callInfo) ?? [:]
+    }
+
+    private func updateCall(_ arguments: ToolArguments) throws -> [String: Any] {
+        let call = try findCall(arguments.string("id"))
+        let others = try context.fetch(CallSuggestions.source).filter { $0.persistentModelID != call.persistentModelID }
+        let caller = try arguments.optionalString("caller")
+        if caller?.isEmpty == true { throw ToolError("'caller' can't be empty.") }
+        let topic = try arguments.optionalString("topic")
+        let department = try arguments.optionalString("department").map(parseDepartment)
+        let length = try arguments.optionalString("length").map(parseCallLength)
+        let solvedByMe = try arguments.bool("solved_by_me")
+        let note = try arguments.optionalString("note")
+        var date: Date?
+        if let text = try arguments.optionalString("at") {
+            date = text.count > 5 ? try ToolFormat.parseMoment(text, now: now())
+                                  : try ToolFormat.parseTime(text, on: call.date.startOfDayZurich, isEnd: false)
+        }
+        let before = callInfo(call)
+        try save {
+            if let caller { call.caller = CallNames.canonical(caller, in: others.map(\.caller)) }
+            if let topic { call.topic = CallNames.canonical(topic, in: others.map(\.topic)) }
+            if let department { call.department = department }
+            if let length { call.length = length }
+            if let solvedByMe { call.solvedByMe = solvedByMe }
+            if let note { call.note = note }
+            if let date { call.date = date }
+        }
+        return ["before": before, "after": callInfo(call)]
+    }
+
+    private func deleteCalls(_ arguments: ToolArguments) throws -> [String: Any] {
+        guard let ids = try arguments.list("ids"), !ids.isEmpty else { throw ToolError("Pass the call ids in 'ids'.") }
+        guard let ids = ids as? [String] else { throw ToolError("'ids' must list call ids (strings).") }
+        var found: [PhoneCall] = [], missing: [String] = []
+        for id in ids {
+            if let call = try? findCall(id) {
+                if !found.contains(where: { $0.persistentModelID == call.persistentModelID }) { found.append(call) }
+            } else {
+                missing.append(id)
+            }
+        }
+        guard missing.isEmpty else {
+            throw ToolError("No call with id \(missing.joined(separator: ", ")). Nothing was deleted.")
+        }
+        let deleted = found.map(callInfo)
+        try save { found.forEach(context.delete) }
+        return ["deleted": deleted]
+    }
+
     // MARK: - Settings
 
     private func updateSettings(_ arguments: ToolArguments) throws -> [String: Any] {
@@ -1053,6 +1204,34 @@ final class AssistantTools {
         return segment
     }
 
+    private func findCall(_ id: String) throws -> PhoneCall {
+        guard let uuid = UUID(uuidString: id.trimmingCharacters(in: .whitespaces)) else {
+            throw ToolError("'\(id)' isn't a call id; ids come from list_calls.")
+        }
+        let target: UUID? = uuid
+        var descriptor = FetchDescriptor<PhoneCall>(predicate: #Predicate { $0.syncID == target })
+        descriptor.fetchLimit = 1
+        guard let call = try context.fetch(descriptor).first else { throw ToolError("No call with id \(id).") }
+        return call
+    }
+
+    private func parseCallLength(_ text: String) throws -> CallLength {
+        guard let length = CallLength(rawValue: text.lowercased()) else {
+            throw ToolError("'length' must be short (under 15 minutes), medium (15 minutes to 1 hour) or long (over 1 hour).")
+        }
+        return length
+    }
+
+    /// One of the departments in the settings, or empty for none.
+    private func parseDepartment(_ text: String) throws -> String {
+        guard !text.isEmpty else { return "" }
+        let departments = preferences.callDepartments
+        guard let match = departments.first(where: { same($0, text) }) else {
+            throw ToolError("There's no department '\(text)'. Departments: \(departments.isEmpty ? "none yet (the user adds them in Settings ▸ Calls)" : departments.joined(separator: ", ")).")
+        }
+        return match
+    }
+
     /// A project by id or name (ignoring case and diacritics), archived ones included.
     private func findProject(_ reference: String) throws -> Project {
         let projects = try context.fetch(FetchDescriptor<Project>(sortBy: [SortDescriptor(\.name)]))
@@ -1176,6 +1355,28 @@ final class AssistantTools {
             "project": nullable(segment.project?.name),
         ]
         if !segment.note.isEmpty { info["note"] = segment.note }
+        return info
+    }
+
+    private func callInfo(_ call: PhoneCall) -> [String: Any] {
+        var info: [String: Any] = [
+            "id": call.syncID?.uuidString ?? "",
+            "date": ToolFormat.day(call.date),
+            "weekday": ToolFormat.weekday(call.date),
+            "time": TimeField.format(call.date),
+            "caller": call.caller,
+            "topic": nullable(call.topic.isEmpty ? nil : call.topic),
+            "department": nullable(call.department.isEmpty ? nil : call.department),
+            "length": call.length.rawValue,
+            "solved_by": call.solvedByMe ? "me" : "caller",
+        ]
+        if !call.note.isEmpty { info["note"] = call.note }
+        return info
+    }
+
+    private func groupInfo(_ group: CallGroup) -> [String: Any] {
+        var info: [String: Any] = ["calls": group.count, "solved_by_me": group.solvedByMe]
+        for length in CallLength.allCases { info[length.rawValue] = group.count(length) }
         return info
     }
 

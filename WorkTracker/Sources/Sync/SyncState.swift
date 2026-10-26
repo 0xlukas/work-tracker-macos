@@ -40,16 +40,28 @@ struct CategoryRecord: Codable, Equatable, Sendable {
     var isArchived: Bool
 }
 
+/// A call as it syncs.
+struct CallRecord: Codable, Equatable, Sendable {
+    var date: Date
+    var length: String
+    var caller: String
+    var topic: String
+    var department: String
+    var note: String
+    var solvedByMe: Bool
+}
+
 /// One synced preference (see `SyncDatabase.settingKeys`).
 enum SettingValue: Equatable, Sendable {
     case date(Date)
     case number(Double)
     case flag(Bool)
     case schedule(WorkSchedule)
+    case names([String])
 }
 
 enum SyncKind: String, Codable, Sendable, CaseIterable {
-    case category, project, entry, absence, setting
+    case category, project, entry, absence, call, setting
 }
 
 enum SyncPayload: Equatable, Sendable {
@@ -57,6 +69,7 @@ enum SyncPayload: Equatable, Sendable {
     case entry(EntryRecord)
     case absence(AbsenceRecord)
     case category(CategoryRecord)
+    case call(CallRecord)
     case setting(SettingValue)
 
     var kind: SyncKind {
@@ -65,6 +78,7 @@ enum SyncPayload: Equatable, Sendable {
         case .entry: return .entry
         case .absence: return .absence
         case .category: return .category
+        case .call: return .call
         case .setting: return .setting
         }
     }
@@ -339,7 +353,7 @@ enum SyncMerge {
 // MARK: - File format
 
 extension SettingValue: Codable {
-    private enum CodingKeys: String, CodingKey { case date, number, flag, schedule }
+    private enum CodingKeys: String, CodingKey { case date, number, flag, schedule, names }
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -347,6 +361,7 @@ extension SettingValue: Codable {
         else if let value = try container.decodeIfPresent(Double.self, forKey: .number) { self = .number(value) }
         else if let value = try container.decodeIfPresent(Bool.self, forKey: .flag) { self = .flag(value) }
         else if let value = try container.decodeIfPresent(WorkSchedule.self, forKey: .schedule) { self = .schedule(value) }
+        else if let value = try container.decodeIfPresent([String].self, forKey: .names) { self = .names(value) }
         else { throw DecodingError.dataCorrupted(.init(codingPath: decoder.codingPath, debugDescription: "Unknown setting value")) }
     }
 
@@ -357,6 +372,7 @@ extension SettingValue: Codable {
         case .number(let value): try container.encode(value, forKey: .number)
         case .flag(let value): try container.encode(value, forKey: .flag)
         case .schedule(let value): try container.encode(value, forKey: .schedule)
+        case .names(let value): try container.encode(value, forKey: .names)
         }
     }
 }
@@ -374,6 +390,7 @@ extension SyncRecord: Codable {
         case .entry: payload = .entry(try container.decode(EntryRecord.self, forKey: .data))
         case .absence: payload = .absence(try container.decode(AbsenceRecord.self, forKey: .data))
         case .category: payload = .category(try container.decode(CategoryRecord.self, forKey: .data))
+        case .call: payload = .call(try container.decode(CallRecord.self, forKey: .data))
         case .setting: payload = .setting(try container.decode(SettingValue.self, forKey: .data))
         }
     }
@@ -389,6 +406,7 @@ extension SyncRecord: Codable {
         case .entry(let data): try container.encode(data, forKey: .data)
         case .absence(let data): try container.encode(data, forKey: .data)
         case .category(let data): try container.encode(data, forKey: .data)
+        case .call(let data): try container.encode(data, forKey: .data)
         case .setting(let data): try container.encode(data, forKey: .data)
         }
     }
@@ -397,9 +415,10 @@ extension SyncRecord: Codable {
 /// What a Mac publishes to the sync folder, and also how it stores its own ledger.
 struct DeviceSnapshot: Codable, Equatable, Sendable {
     /// Bump this whenever a record gains a field, a kind or setting is added, or a
-    /// stored value can take a new value (an `AbsenceType` case, a counting rule): Macs
-    /// skip files in a newer format and say so, instead of reading them half.
-    static let currentFormat = 1
+    /// stored value can take a new value (an `AbsenceType` case, a counting rule, a
+    /// `CallLength`): Macs skip files in a newer format and say so, instead of reading
+    /// them half. 2: calls.
+    static let currentFormat = 2
 
     struct Device: Codable, Equatable, Sendable {
         var id: String

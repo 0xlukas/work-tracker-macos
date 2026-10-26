@@ -53,6 +53,9 @@ final class Preferences {
         static let backupMirrorDirectory = "backupMirrorDirectory"
         static let calendarSyncEnabled = "calendarSyncEnabled"
         static let absenceCalendarID = "absenceCalendarID"
+        static let callTrackingEnabled = "callTrackingEnabled"
+        static let callShortcut = "callShortcut"
+        static let callDepartments = "callDepartments"
     }
 
     init(defaults: UserDefaults = .standard) {
@@ -79,6 +82,9 @@ final class Preferences {
         backupMirrorDirectory = defaults.string(forKey: Key.backupMirrorDirectory).map { URL(fileURLWithPath: $0) }
         calendarSyncEnabled = defaults.bool(forKey: Key.calendarSyncEnabled)
         absenceCalendarID = defaults.string(forKey: Key.absenceCalendarID)
+        callTrackingEnabled = defaults.bool(forKey: Key.callTrackingEnabled)
+        callShortcut = defaults.string(forKey: Key.callShortcut).flatMap(CallShortcut.init(rawValue:)) ?? .controlOptionC
+        callDepartments = defaults.stringArray(forKey: Key.callDepartments) ?? []
         language = Localization.current
     }
 
@@ -124,6 +130,13 @@ final class Preferences {
     var calendarSyncEnabled: Bool { didSet { defaults.set(calendarSyncEnabled, forKey: Key.calendarSyncEnabled) } }
     /// EventKit identifier of the Work Tracker calendar once it exists.
     var absenceCalendarID: String? { didSet { defaults.set(absenceCalendarID, forKey: Key.absenceCalendarID) } }
+
+    /// Calls in the sidebar, the menu bar and the call shortcut (see `CallControl`). Per
+    /// Mac; the calls themselves sync.
+    var callTrackingEnabled: Bool { didSet { defaults.set(callTrackingEnabled, forKey: Key.callTrackingEnabled) } }
+    var callShortcut: CallShortcut { didSet { defaults.set(callShortcut.rawValue, forKey: Key.callShortcut) } }
+    /// The departments a call can be logged for, in the order shown. Syncs.
+    var callDepartments: [String] { didSet { defaults.set(callDepartments, forKey: Key.callDepartments) } }
 
     var language: AppLanguage { didSet { Localization.current = language } }
 

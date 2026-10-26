@@ -1,6 +1,36 @@
 {
   "sourceLanguage": "en",
   "strings": {
+    "Add a call in ${applicationName}": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anruf in ${applicationName} eintragen"
+          }
+        }
+      }
+    },
+    "Log a call from ${caller} in ${applicationName}": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anruf von ${caller} in ${applicationName} erfassen"
+          }
+        }
+      }
+    },
+    "Log a call in ${applicationName}": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anruf in ${applicationName} erfassen"
+          }
+        }
+      }
+    },
     "Log time on ${project} in ${applicationName}": {
       "localizations": {
         "de": {
