@@ -72,7 +72,10 @@ struct ContentView: View {
                 }
             }
             .frame(minWidth: 860, minHeight: 620)
-            .disabled(showDailyQuote)
+            // Not `.disabled`: disabling every control while macOS restores a tiled window
+            // at launch sent SwiftUI into an endless layout loop (the app hung at 100% CPU).
+            // The quote's backdrop takes the clicks, its key capture the typing.
+            .allowsHitTesting(!showDailyQuote)
 
             if showDailyQuote {
                 DailyQuoteOverlayView(quote: DailyQuote.quoteOfTheDay()) {

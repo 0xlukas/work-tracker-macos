@@ -85,6 +85,8 @@ struct DailyQuoteOverlayView: View {
             KeyCaptureRepresentable(onEvent: onDismiss)
                 .frame(width: 0, height: 0)
         }
+        // VoiceOver stays on the quote, as it did while the workspace was disabled.
+        .accessibilityAddTraits(.isModal)
     }
 }
 
@@ -106,11 +108,30 @@ private struct KeyCaptureRepresentable: NSViewRepresentable {
 
 final class KeyCaptureNSView: NSView {
     var onEvent: (() -> Void)?
+    /// Removed in deinit, which runs on the main thread like the rest of the view's life.
+    nonisolated(unsafe) private var monitor: Any?
 
     override var acceptsFirstResponder: Bool { true }
 
+    deinit {
+        if let monitor { NSEvent.removeMonitor(monitor) }
+    }
+
     override func viewDidMoveToWindow() {
         super.viewDidMoveToWindow()
+        if let monitor { NSEvent.removeMonitor(monitor) }
+        monitor = nil
+        guard let window else { return }
+        // The workspace behind the quote stays enabled (disabling it at launch hung the app),
+        // so its toolbar and shortcuts still work: in this window, a click or a ⌘ shortcut
+        // dismisses the quote too. Other windows (Settings, the call panel) leave it alone.
+        monitor = NSEvent.addLocalMonitorForEvents(matching: [.keyDown, .leftMouseDown]) { [weak self, weak window] event in
+            if let window, event.window === window,
+               event.type == .leftMouseDown || event.modifierFlags.contains(.command) {
+                self?.onEvent?()
+            }
+            return event
+        }
         DispatchQueue.main.async { [weak self] in
             self?.window?.makeFirstResponder(self)
         }

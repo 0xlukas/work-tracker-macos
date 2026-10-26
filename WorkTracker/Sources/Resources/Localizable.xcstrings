@@ -2271,6 +2271,16 @@
         }
       }
     },
+    "Enter who called.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geben Sie ein, wer angerufen hat."
+          }
+        }
+      }
+    },
     "Excel with German regional settings expects semicolons and decimal commas.": {
       "localizations": {
         "de": {

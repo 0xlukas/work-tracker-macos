@@ -229,6 +229,18 @@ final class LogCallIntentTests: XCTestCase {
         XCTAssertEqual(logged.length, .long)
         XCTAssertTrue(logged.solvedByMe)
 
+        // A new intent: parameters are reference-backed, so a copy would share them.
+        var blank = LogCallIntent()
+        blank.caller = CallerEntity(id: "  ")
+        blank.topic = CallTopicEntity(id: "mortgage")
+        blank.length = .short
+        blank.solvedByMe = false
+        do {
+            _ = try await blank.perform()
+            XCTFail("a blank caller from Shortcuts is refused")
+        } catch is IntentMessage {}
+        XCTAssertEqual(try container.mainContext.fetchCount(FetchDescriptor<PhoneCall>()), 2)
+
         intent.department = CallDepartmentEntity(id: "Credit")
         intent.note = " follow up "
         _ = try await intent.perform()

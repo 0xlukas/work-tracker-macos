@@ -316,6 +316,7 @@ struct LogCallIntent: AppIntent {
         guard preferences.callTrackingEnabled else {
             throw IntentMessage(tr("Turn on Track calls in Work Tracker’s settings first."))
         }
+        guard !CallNames.trimmed(caller.id).isEmpty else { throw IntentMessage(tr("Enter who called.")) }
         let context = try IntentStore.context
         let suggestions = CallSuggestions(calls: try context.fetch(CallSuggestions.source))
         let call = CallLog.add(caller: caller.id, topic: topic.id,
