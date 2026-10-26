@@ -10,6 +10,8 @@ Work Tracker isn't in the App Store, so build it yourself: install Xcode 27 (it 
 
 Public holidays are the ones of the canton of Zurich (see Work schedule and balances).
 
+Work Tracker is under the MIT license (`LICENSE`).
+
 ## Building
 
 ```sh
@@ -111,7 +113,3 @@ To restore, pick a snapshot in Settings ▸ Backups ▸ Restore. The app restart
 ## Validation
 
 `swift test` covers the calculator (all categories and day kinds, schedules, per-year allowance and carry-over), holidays, migrations V1–V5, backups, store moves and restores, sync (the merge rules, and two simulated Macs syncing through a folder: joining, both directions, conflicts, missing items, restores, recovery), CSV, the timer, entry actions, parsing, voice command resolution, the assistant tools and MCP server (HTTP parsing, request checks, a round trip over the network), and catalog completeness. Set `WORK_TRACKER_TEST_STORE` to a standalone database snapshot to also check that a real store migrates without losing entries or hours.
-
-## License
-
-MIT, see `LICENSE`.
