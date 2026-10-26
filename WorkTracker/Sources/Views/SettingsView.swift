@@ -686,8 +686,10 @@ private struct CallSettings: View {
                     }
                     .onMove { preferences.callDepartments.move(fromOffsets: $0, toOffset: $1) }
                     HStack {
+                        // Bordered: plain, the empty field read like a label rather than somewhere to type.
                         TextField(tr("Add department"), text: $newDepartment, prompt: Text(tr("New department")))
                             .labelsHidden()
+                            .textFieldStyle(.roundedBorder)
                             .onSubmit(addDepartment)
                             .onChange(of: newDepartment) { departmentError = nil }
                         Button(tr("Add"), action: addDepartment)
