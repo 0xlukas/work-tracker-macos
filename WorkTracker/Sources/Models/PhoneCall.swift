@@ -20,6 +20,16 @@ enum CallLength: String, CaseIterable, Identifiable, Sendable {
         }
     }
 
+    /// What a call of this length counts for in time estimates: the middle of the block
+    /// (an hour and a quarter for "over 1 hour"), since calls aren't timed.
+    var estimatedMinutes: Double {
+        switch self {
+        case .short: return 7.5
+        case .medium: return 37.5
+        case .long: return 75
+        }
+    }
+
     /// Spelled out, for help tags, VoiceOver and exports.
     var detail: String {
         switch self {
@@ -195,6 +205,10 @@ struct CallGroup: Identifiable, Equatable {
     var id: String { CallNames.key(name) }
     var count: Int { counts.values.reduce(0, +) }
     func count(_ length: CallLength) -> Int { counts[length] ?? 0 }
+    /// Time on these calls, estimated from their lengths (see `CallLength.estimatedMinutes`).
+    var estimatedMinutes: Double { counts.reduce(0) { $0 + $1.key.estimatedMinutes * Double($1.value) } }
+    /// Share of the calls whose issue the user solved, or nil without calls.
+    var solvedShare: Double? { count > 0 ? Double(solvedByMe) / Double(count) : nil }
 
     /// Most calls first, then the most long and medium ones.
     fileprivate var rank: [Int] { [count, count(.long), count(.medium)] }

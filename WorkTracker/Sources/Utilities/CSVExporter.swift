@@ -80,10 +80,11 @@ struct CSVExporter {
     /// One row per call, in chronological order.
     func calls(_ calls: [PhoneCall]) -> String {
         var rows = [line([tr("Date"), tr("Weekday"), tr("Time"), tr("Caller"), tr("Topic"), tr("Department"),
-                          tr("Length"), tr("Solved by"), tr("Note")])]
+                          tr("Length"), tr("Estimated minutes"), tr("Solved by"), tr("Note")])]
         for call in calls.sorted(by: { $0.date < $1.date }) {
             rows.append(line([isoDate(call.date), weekday(call.date), TimeField.format(call.date), call.caller, call.topic,
-                              call.department, call.length.detail, CallExport.solver(call), call.note]))
+                              call.department, call.length.detail, number(call.length.estimatedMinutes),
+                              CallExport.solver(call), call.note]))
         }
         return prefix + rows.joined(separator: "\n") + "\n"
     }

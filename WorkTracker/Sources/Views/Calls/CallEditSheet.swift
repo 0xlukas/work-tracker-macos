@@ -10,6 +10,8 @@ struct CallEditSheet: View {
     @Query private var recentCalls: [PhoneCall]
 
     let call: PhoneCall?
+    /// The earliest day a call can be set to.
+    private static let earliest = Calendar.zurich.zurichDate(year: 2000, month: 1, day: 1)
 
     @State private var caller: String
     @State private var topic: String
@@ -64,7 +66,9 @@ struct CallEditSheet: View {
                     Toggle(tr("Solved by me"), isOn: $solvedByMe)
                     TextField(tr("Note"), text: $note, prompt: Text(tr("Optional")), axis: .vertical)
                         .lineLimit(1...3)
-                    DatePicker(tr("When"), selection: $date, displayedComponents: [.date, .hourAndMinute])
+                    // Calls that happened: a mistyped year would skew every statistic.
+                    DatePicker(tr("When"), selection: $date, in: Self.earliest...Date().startOfDayZurich.addingDays(1).addingTimeInterval(-60),
+                               displayedComponents: [.date, .hourAndMinute])
                 }
             }
             .formStyle(.grouped)

@@ -325,7 +325,7 @@ final class AssistantTools {
                                     "limit": Param.number("Most calls to return; 300 by default, at most 2000.")],
                        required: ["from"], effect: .read),
         ToolDefinition(name: "get_call_summary", title: "Call summary",
-                       description: "Calls in a date range counted per length, per caller, per topic and per department, with how many the user solved. Also lists the departments calls can be logged for.",
+                       description: "Calls in a date range counted per length, per caller, per topic and per department, with how many the user solved and the estimated time on them. Also lists the departments calls can be logged for.",
                        properties: ["from": Param.day("First day."), "to": Param.day("Last day (inclusive); defaults to 'from'.")],
                        required: ["from"], effect: .read),
         ToolDefinition(name: "log_call", title: "Log a call",
@@ -976,7 +976,7 @@ final class AssistantTools {
         var result = groupInfo(CallReport.total(calls))
         result["from"] = ToolFormat.day(from)
         result["to"] = ToolFormat.day(to)
-        result["lengths"] = "short: under 15 minutes, medium: 15 minutes to 1 hour, long: over 1 hour"
+        result["lengths"] = "short: under 15 minutes, medium: 15 minutes to 1 hour, long: over 1 hour; estimated_minutes counts them as 7.5, 37.5 and 75 minutes, since calls aren't timed"
         result["callers"] = rows(CallReport.byCaller(calls), "caller")
         result["topics"] = rows(CallReport.byTopic(calls), "topic")
         result["by_department"] = rows(CallReport.byDepartment(calls), "department")
@@ -1375,7 +1375,8 @@ final class AssistantTools {
     }
 
     private func groupInfo(_ group: CallGroup) -> [String: Any] {
-        var info: [String: Any] = ["calls": group.count, "solved_by_me": group.solvedByMe]
+        var info: [String: Any] = ["calls": group.count, "solved_by_me": group.solvedByMe,
+                                   "estimated_minutes": ToolFormat.hours(group.estimatedMinutes)]
         for length in CallLength.allCases { info[length.rawValue] = group.count(length) }
         return info
     }
